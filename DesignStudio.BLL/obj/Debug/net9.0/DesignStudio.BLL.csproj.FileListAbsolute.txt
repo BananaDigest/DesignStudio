@@ -1,0 +1,16 @@
+/Users/macboock/DesignStudio/DesignStudio.BLL/bin/Debug/net9.0/DesignStudio.BLL.deps.json
+/Users/macboock/DesignStudio/DesignStudio.BLL/bin/Debug/net9.0/DesignStudio.BLL.dll
+/Users/macboock/DesignStudio/DesignStudio.BLL/bin/Debug/net9.0/DesignStudio.BLL.pdb
+/Users/macboock/DesignStudio/DesignStudio.BLL/bin/Debug/net9.0/DesignStudio.DAL.dll
+/Users/macboock/DesignStudio/DesignStudio.BLL/bin/Debug/net9.0/DesignStudio.DAL.pdb
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.csproj.AssemblyReference.cache
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.AssemblyInfoInputs.cache
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.AssemblyInfo.cs
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.csproj.CoreCompileInputs.cache
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.sourcelink.json
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignSt.06588C03.Up2Date
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.dll
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/refint/DesignStudio.BLL.dll
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/DesignStudio.BLL.pdb
+/Users/macboock/DesignStudio/DesignStudio.BLL/obj/Debug/net9.0/ref/DesignStudio.BLL.dll

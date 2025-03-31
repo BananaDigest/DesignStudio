@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignStudio.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb217d45273419f9b2ed688a158a1077d243b650")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignStudio.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignStudio.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
