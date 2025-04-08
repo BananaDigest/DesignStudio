@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj": {}
+    "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj": {}
   },
   "projects": {
-    "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj": {
+    "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj",
+        "projectUniqueName": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj",
         "projectName": "DesignStudio.DAL",
-        "projectPath": "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj",
-        "packagesPath": "/Users/macboock/.nuget/packages/",
-        "outputPath": "/Users/macboock/DesignStudio/DesignStudio.DAL/obj/",
+        "projectPath": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj",
+        "packagesPath": "C:\\Users\\sofik\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/macboock/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\sofik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,7 +58,11 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
+            },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
             }
           },
           "imports": [
@@ -71,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

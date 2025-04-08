@@ -1,0 +1,161 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Coding\\DesignStudio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\designstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\designstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.models\\portfolioitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.models\\portfolioitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.models\\designservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.models\\designservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.data\\designstudiocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.data\\designstudiocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|d:\\coding\\designstudio\\designstudio.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|solutionrelative:designstudio.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PortfolioItem.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:10.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:08.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:04.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DesignService.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:03.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DesignStudioService.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudioService.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\DesignStudioService.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudioService.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\DesignStudioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:37:29.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DesignStudioContext.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:37:56.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Program.cs",
+              "RelativeDocumentMoniker": "DesignStudio.UI\\Program.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Program.cs",
+              "RelativeToolTip": "DesignStudio.UI\\Program.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:37:23.697Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
