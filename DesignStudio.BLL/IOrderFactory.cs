@@ -1,6 +1,6 @@
 using DesignStudio.DAL.Models;
 
-namespace DesignStudio.BLL.Interfaces
+namespace DesignStudio.BLL
 {
     public interface IOrderFactory
     {

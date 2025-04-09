@@ -1,8 +1,7 @@
 using System;
-using DesignStudio.BLL.Interfaces;
 using DesignStudio.DAL.Models;
 
-namespace DesignStudio.BLL.Factories
+namespace DesignStudio.BLL
 {
     public class OrderFactory : IOrderFactory
     {

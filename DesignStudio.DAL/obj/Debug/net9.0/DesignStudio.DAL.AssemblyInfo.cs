@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5df3f3f249fcbbdd10e2c1430b3786c8cfd0262")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f9718d4daedcc29bd087fb70c85298a29903911")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

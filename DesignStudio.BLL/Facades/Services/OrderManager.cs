@@ -1,64 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using DesignStudio.DAL.Data;
 using DesignStudio.DAL.Models;
-using DesignStudio.BLL.Interfaces;
 
 namespace DesignStudio.BLL.Services
 {
-    public class DesignStudioService
+    public class OrderManager
     {
         private readonly DesignStudioContext _context;
         private readonly IOrderFactory _orderFactory;
 
-        public DesignStudioService(DesignStudioContext context, IOrderFactory factory)
+        public OrderManager(DesignStudioContext context, IOrderFactory orderFactory)
         {
             _context = context;
-            _orderFactory = factory;
+            _orderFactory = orderFactory;
         }
-
-        // === Послуги ===
-
-        public void AddDesignService(DesignService service)
-        {
-            _context.DesignServices.Add(service);
-            _context.SaveChanges();
-        }
-
-        public IEnumerable<DesignService> GetAllServices()
-        {
-            return _context.DesignServices
-                .Include(ds => ds.PortfolioItems)
-                .Include(ds => ds.Orders)
-                .ToList();
-        }
-
-        public void UpdateDesignService(DesignService service)
-        {
-            _context.DesignServices.Update(service);
-            _context.SaveChanges();
-        }
-
-        public void DeleteDesignService(int id)
-        {
-            var s = _context.DesignServices.Find(id);
-            if (s != null)
-            {
-                _context.DesignServices.Remove(s);
-                _context.SaveChanges();
-            }
-        }
-
-        public DesignService? GetServiceById(int id)
-        {
-            return _context.DesignServices
-                .Include(s => s.Orders)
-                .FirstOrDefault(s => s.DesignServiceId == id);
-        }
-
-        // === Замовлення ===
 
         public void CreateTurnkeyOrder(string customer, string phone, string req, string desc)
         {
@@ -101,12 +57,10 @@ namespace DesignStudio.BLL.Services
                 .Include(o => o.DesignServices)
                 .FirstOrDefault(o => o.OrderId == orderId);
 
-            if (order == null || order.Status == OrderStatus.Completed)
+            if (order == null)
                 return;
 
-            order.Status = OrderStatus.Completed;
-            _context.Orders.Update(order);
-
+            // Створюємо елемент портфоліо
             var portfolioItem = order.IsTurnkey
                 ? new PortfolioItem
                 {
@@ -121,16 +75,11 @@ namespace DesignStudio.BLL.Services
                 };
 
             _context.PortfolioItems.Add(portfolioItem);
+
+            // Видаляємо замовлення з БД
+            _context.Orders.Remove(order);
+
             _context.SaveChanges();
-        }
-
-        // === Портфоліо ===
-
-        public IEnumerable<PortfolioItem> GetPortfolio()
-        {
-            return _context.PortfolioItems
-                .Include(p => p.DesignService)
-                .ToList();
         }
     }
 }
