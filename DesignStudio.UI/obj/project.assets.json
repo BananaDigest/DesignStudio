@@ -497,6 +497,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "DesignStudio.DAL": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4",
           "SQLite": "3.13.0"
         },
@@ -1198,47 +1199,41 @@
     "net9.0": [
       "DesignStudio.BLL >= 1.0.0",
       "DesignStudio.DAL >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.4",
       "SQLite >= 3.13.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sofik\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/macboock/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\DesignStudio.UI.csproj",
+      "projectUniqueName": "/Users/macboock/DesignStudio/DesignStudio.UI/DesignStudio.UI.csproj",
       "projectName": "DesignStudio.UI",
-      "projectPath": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\DesignStudio.UI.csproj",
-      "packagesPath": "C:\\Users\\sofik\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\obj\\",
+      "projectPath": "/Users/macboock/DesignStudio/DesignStudio.UI/DesignStudio.UI.csproj",
+      "packagesPath": "/Users/macboock/.nuget/packages/",
+      "outputPath": "/Users/macboock/DesignStudio/DesignStudio.UI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\sofik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/macboock/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudio.BLL.csproj": {
-              "projectPath": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudio.BLL.csproj"
+            "/Users/macboock/DesignStudio/DesignStudio.BLL/DesignStudio.BLL.csproj": {
+              "projectPath": "/Users/macboock/DesignStudio/DesignStudio.BLL/DesignStudio.BLL.csproj"
             },
-            "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj": {
-              "projectPath": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.csproj"
+            "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj": {
+              "projectPath": "/Users/macboock/DesignStudio/DesignStudio.DAL/DesignStudio.DAL.csproj"
             }
           }
         }
@@ -1259,6 +1254,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[9.0.4, )"
+          },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[9.0.4, )"
@@ -1284,7 +1283,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

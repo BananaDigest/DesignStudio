@@ -1,22 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using DesignStudio.DAL.Data;
 using DesignStudio.DAL.Models;
-using Microsoft.EntityFrameworkCore;
+using DesignStudio.BLL.Interfaces;
 
-namespace DesignStudio.BLL
+namespace DesignStudio.BLL.Services
 {
-     // Клас бізнес-логіки, що інкапсулює операції над даними
     public class DesignStudioService
     {
         private readonly DesignStudioContext _context;
+        private readonly IOrderFactory _orderFactory;
 
-        public DesignStudioService(DesignStudioContext context)
+        public DesignStudioService(DesignStudioContext context, IOrderFactory factory)
         {
             _context = context;
+            _orderFactory = factory;
         }
 
-        // CRUD операції для послуг
+        // === Послуги ===
 
         public void AddDesignService(DesignService service)
         {
@@ -24,12 +27,12 @@ namespace DesignStudio.BLL
             _context.SaveChanges();
         }
 
-        public IEnumerable<DesignService> GetDesignServices()
+        public IEnumerable<DesignService> GetAllServices()
         {
             return _context.DesignServices
-                           .Include(ds => ds.PortfolioItems)
-                           .Include(ds => ds.Orders)
-                           .ToList();
+                .Include(ds => ds.PortfolioItems)
+                .Include(ds => ds.Orders)
+                .ToList();
         }
 
         public void UpdateDesignService(DesignService service)
@@ -38,34 +41,53 @@ namespace DesignStudio.BLL
             _context.SaveChanges();
         }
 
-        public void DeleteDesignService(int serviceId)
+        public void DeleteDesignService(int id)
         {
-            var service = _context.DesignServices.Find(serviceId);
-            if (service != null)
+            var s = _context.DesignServices.Find(id);
+            if (s != null)
             {
-                _context.DesignServices.Remove(service);
+                _context.DesignServices.Remove(s);
                 _context.SaveChanges();
             }
         }
 
-        // Операції для замовлень
-
-        public void AddOrder(Order order)
+        public DesignService? GetServiceById(int id)
         {
+            return _context.DesignServices
+                .Include(s => s.Orders)
+                .FirstOrDefault(s => s.DesignServiceId == id);
+        }
+
+        // === Замовлення ===
+
+        public void CreateTurnkeyOrder(string customer, string phone, string req, string desc)
+        {
+            var order = _orderFactory.CreateTurnkeyOrder(customer, phone, req, desc);
             _context.Orders.Add(order);
             _context.SaveChanges();
         }
 
-        public IEnumerable<Order> GetOrders()
+        public void CreateServiceOrder(string customer, string phone, int serviceId)
         {
-            return _context.Orders
-                           .Include(o => o.DesignServices)
-                           .ToList();
+            var service = _context.DesignServices.Find(serviceId);
+            if (service != null)
+            {
+                var order = _orderFactory.CreateServiceOrder(customer, phone, service);
+                _context.Orders.Add(order);
+                _context.SaveChanges();
+            }
         }
 
-        public void DeleteOrder(int orderId)
+        public IEnumerable<Order> GetAllOrders()
         {
-            var order = _context.Orders.Find(orderId);
+            return _context.Orders
+                .Include(o => o.DesignServices)
+                .ToList();
+        }
+
+        public void DeleteOrder(int id)
+        {
+            var order = _context.Orders.Find(id);
             if (order != null)
             {
                 _context.Orders.Remove(order);
@@ -73,45 +95,42 @@ namespace DesignStudio.BLL
             }
         }
 
-        // Позначення замовлення як виконаного з додаванням роботи в портфоліо
         public void MarkOrderAsCompleted(int orderId)
         {
-            var order = _context.Orders.Include(o => o.DesignServices)
-                                       .FirstOrDefault(o => o.OrderId == orderId);
-            if (order != null && order.Status != OrderStatus.Completed)
-            {
-                order.Status = OrderStatus.Completed;
-                _context.Orders.Update(order);
+            var order = _context.Orders
+                .Include(o => o.DesignServices)
+                .FirstOrDefault(o => o.OrderId == orderId);
 
-                PortfolioItem portfolioItem = null;
-                if (order.IsTurnkey)
+            if (order == null || order.Status == OrderStatus.Completed)
+                return;
+
+            order.Status = OrderStatus.Completed;
+            _context.Orders.Update(order);
+
+            var portfolioItem = order.IsTurnkey
+                ? new PortfolioItem
                 {
-                    // Для замовлення «під ключ» використовуємо введені дані
-                    portfolioItem = new PortfolioItem
-                    {
-                        Title = order.DesignRequirement,
-                        Description = order.DesignDescription,
-                        ImageUrl = ""  // Можна вказати посилання на зображення, якщо є
-                    };
+                    Title = order.DesignRequirement ?? "Проєкт",
+                    Description = order.DesignDescription ?? "Опис відсутній"
                 }
-                else if (order.DesignServices.Any())
+                : new PortfolioItem
                 {
-                    // Для замовлення з переліку беремо дані першої послуги
-                    var ds = order.DesignServices.First();
-                    portfolioItem = new PortfolioItem
-                    {
-                        Title = ds.Name,
-                        Description = ds.Description,
-                        ImageUrl = ""
-                    };
-                }
-                if (portfolioItem != null)
-                {
-                    _context.PortfolioItems.Add(portfolioItem);
-                }
-                _context.SaveChanges();
-            }
+                    Title = order.DesignServices.First().Name,
+                    Description = order.DesignServices.First().Description,
+                    DesignService = order.DesignServices.First()
+                };
+
+            _context.PortfolioItems.Add(portfolioItem);
+            _context.SaveChanges();
+        }
+
+        // === Портфоліо ===
+
+        public IEnumerable<PortfolioItem> GetPortfolio()
+        {
+            return _context.PortfolioItems
+                .Include(p => p.DesignService)
+                .ToList();
         }
     }
 }
-
