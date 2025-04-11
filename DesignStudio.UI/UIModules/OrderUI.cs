@@ -31,7 +31,10 @@ namespace DesignStudio.UI.UIModules
             {
                 Console.WriteLine("=== Доступні послуги ===");
                 foreach (var s in service.GetAllServices())
+                {
                     Console.WriteLine($"{s.DesignServiceId}) {s.Name} — {s.Price} грн");
+                    Console.WriteLine($"    Опис: {s.Description}");
+                }
 
                 Console.Write("ID послуги: ");
                 if (int.TryParse(Console.ReadLine(), out int sid))
@@ -59,12 +62,29 @@ namespace DesignStudio.UI.UIModules
                 return;
             }
 
-            // Відображаємо за індексом
-            for (int i = 0; i < orders.Count; i++)
+            foreach (var o in orders)
             {
-                var o = orders[i];
+                Console.WriteLine($"ID замовлення: {o.OrderId}");
+                Console.WriteLine($"Замовник: {o.CustomerName}");
+                Console.WriteLine($"Телефон: {o.Phone}");
+                Console.WriteLine($"Дата: {o.OrderDate}");
                 var type = o.IsTurnkey ? "Під ключ" : "З переліку";
-                Console.WriteLine($"{i+1}) {o.CustomerName} | {type}");
+                Console.WriteLine($"Тип: {type}");
+                if (o.IsTurnkey)
+                {
+                    Console.WriteLine($"Проєкт: {o.DesignRequirement}");
+                    Console.WriteLine($"Опис: {o.DesignDescription}");
+                }
+                else
+                {
+                    Console.WriteLine("Послуги:");
+                    foreach (var s in o.DesignServices)
+                    {
+                        Console.WriteLine($"  - {s.Name} ({s.Price} грн)");
+                        Console.WriteLine($"      Опис: {s.Description}");
+                    }
+                }
+                Console.WriteLine(new string('-', 50));
             }
 
             Console.WriteLine("\n1) Скасувати замовлення");

@@ -18,13 +18,10 @@ namespace DesignStudio.UI.UIModules
             Console.Write("Ціна: ");
             if (decimal.TryParse(Console.ReadLine(), out decimal price))
             {
-                // Створення об'єкта послуги
                 var designService = new DesignService { Name = name, Description = desc, Price = price };
 
-                // Створення конкретної команди для додавання послуги
                 ICommand command = new AddServiceCommand(service, designService);
 
-                // Використання інвокера для виконання команди
                 var invoker = new CommandInvoker();
                 invoker.Invoke(command);
             }
@@ -46,7 +43,6 @@ namespace DesignStudio.UI.UIModules
                 return;
             }
 
-            // Відображаємо за індексом
             for (int i = 0; i < services.Count; i++)
                 Console.WriteLine($"{i + 1}) {services[i].Name} - {services[i].Price} грн");
 

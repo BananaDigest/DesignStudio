@@ -10,7 +10,6 @@ namespace DesignStudio.UI
     {
         static void Main()
         {
-            // Ініціалізація контексту та залежностей
             var options = new DbContextOptionsBuilder<DesignStudioContext>()
                 .UseLazyLoadingProxies()  
                 .UseSqlite("Data Source=designstudio.db")
@@ -21,7 +20,6 @@ namespace DesignStudio.UI
             var orderFactory = new OrderFactory();
             var designService = new DesignStudioService(context, orderFactory);
 
-            // Передаємо керування до MenuManager
             MenuManager menu = new MenuManager(designService);
             menu.Run();
         }

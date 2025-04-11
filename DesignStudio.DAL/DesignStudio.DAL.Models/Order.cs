@@ -12,10 +12,8 @@ namespace DesignStudio.DAL.Models
         public DateTime OrderDate { get; set; }
 
         public bool IsTurnkey { get; set; }
-        public string? DesignRequirement { get; set; } // Під ключ
+        public string? DesignRequirement { get; set; } 
         public string? DesignDescription { get; set; }
-
-        public OrderStatus Status { get; set; } = OrderStatus.InProcess;
 
         // З переліку
         public virtual ICollection<DesignService> DesignServices { get; set; } = new List<DesignService>();

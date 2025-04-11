@@ -52,34 +52,28 @@ namespace DesignStudio.BLL.Services
         }
 
         public void MarkOrderAsCompleted(int orderId)
-        {
-            var order = _context.Orders
-                .Include(o => o.DesignServices)
-                .FirstOrDefault(o => o.OrderId == orderId);
-
-            if (order == null)
-                return;
-
-            // Створюємо елемент портфоліо
-            var portfolioItem = order.IsTurnkey
-                ? new PortfolioItem
-                {
-                    Title = order.DesignRequirement ?? "Проєкт",
-                    Description = order.DesignDescription ?? "Опис відсутній"
-                }
-                : new PortfolioItem
-                {
-                    Title = order.DesignServices.First().Name,
-                    Description = order.DesignServices.First().Description,
-                    DesignService = order.DesignServices.First()
-                };
-
-            _context.PortfolioItems.Add(portfolioItem);
-
-            // Видаляємо замовлення з БД
-            _context.Orders.Remove(order);
-
-            _context.SaveChanges();
-        }
+       {
+           var order = _context.Orders
+               .Include(o => o.DesignServices)
+               .FirstOrDefault(o => o.OrderId == orderId);
+  
+           _context.Orders.Update(order);
+  
+           var portfolioItem = order.IsTurnkey
+               ? new PortfolioItem
+               {
+                   Title = order.DesignRequirement ?? "Проєкт",
+                   Description = order.DesignDescription ?? "Опис відсутній"
+               }
+               : new PortfolioItem
+               {
+                   Title = order.DesignServices.First().Name,
+                   Description = order.DesignServices.First().Description,
+                   DesignService = order.DesignServices.First()
+               };
+  
+           _context.PortfolioItems.Add(portfolioItem);
+           _context.SaveChanges();
+       }
     }
 }

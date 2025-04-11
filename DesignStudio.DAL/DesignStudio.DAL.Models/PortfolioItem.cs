@@ -6,7 +6,6 @@ namespace DesignStudio.DAL.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
-        // Nullable — бо для замовлення під ключ зв'язку може не бути
         public int? DesignServiceId { get; set; }
         public virtual DesignService? DesignService { get; set; }
     }

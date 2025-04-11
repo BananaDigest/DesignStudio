@@ -26,7 +26,6 @@ namespace DesignStudio.UI
                 Console.Write("Оберіть опцію: ");
                 string choice = Console.ReadLine();
 
-                // Виклик відповідних модулів
                 switch (choice)
                 {
                     case "1":
