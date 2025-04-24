@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "S6COIup8PiU=",
+  "dgSpecHash": "OKD7R02FwQ0=",
   "success": true,
   "projectFilePath": "/Users/macboock/DesignStudio/DesignStudio.BLL/DesignStudio.BLL.csproj",
   "expectedPackageFiles": [
+    "/Users/macboock/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/macboock/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/macboock/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
+    "/Users/macboock/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/macboock/.nuget/packages/microsoft.data.sqlite.core/9.0.4/microsoft.data.sqlite.core.9.0.4.nupkg.sha512",
     "/Users/macboock/.nuget/packages/microsoft.entityframeworkcore/9.0.4/microsoft.entityframeworkcore.9.0.4.nupkg.sha512",
     "/Users/macboock/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.4/microsoft.entityframeworkcore.abstractions.9.0.4.nupkg.sha512",

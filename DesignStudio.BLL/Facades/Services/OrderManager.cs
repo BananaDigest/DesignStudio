@@ -1,79 +1,131 @@
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using DesignStudio.DAL.Data;
+using AutoMapper;
+using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Interfaces;
 using DesignStudio.DAL.Models;
+using DesignStudio.DAL.Repositories;
 
 namespace DesignStudio.BLL.Services
 {
-    public class OrderManager
+    public class OrderManager : IOrderManager
     {
-        private readonly DesignStudioContext _context;
-        private readonly IOrderFactory _orderFactory;
+        private readonly IUnitOfWork _uow;
+        private readonly IMapper _mapper;
 
-        public OrderManager(DesignStudioContext context, IOrderFactory orderFactory)
+        public OrderManager(IUnitOfWork uow, IMapper mapper)
         {
-            _context = context;
-            _orderFactory = orderFactory;
+            _uow = uow;
+            _mapper = mapper;
         }
 
-        public void CreateTurnkeyOrder(string customer, string phone, string req, string desc)
+        public async Task<IEnumerable<OrderDto>> GetOrdersAsync()
         {
-            var order = _orderFactory.CreateTurnkeyOrder(customer, phone, req, desc);
-            _context.Orders.Add(order);
-            _context.SaveChanges();
+            var orders = await _uow.Orders.GetWithIncludeAsync(o => o.DesignServices);
+            return _mapper.Map<IEnumerable<OrderDto>>(orders);
         }
 
-        public void CreateServiceOrder(string customer, string phone, int serviceId)
+        public async Task CreateTurnkeyOrderAsync(OrderDto dto)
         {
-            var service = _context.DesignServices.Find(serviceId);
-            if (service != null)
+            await _uow.BeginTransactionAsync();
+            try
             {
-                var order = _orderFactory.CreateServiceOrder(customer, phone, service);
-                _context.Orders.Add(order);
-                _context.SaveChanges();
+                var order = _mapper.Map<Order>(dto);
+                await _uow.Orders.AddAsync(order);
+                await _uow.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _uow.RollbackTransactionAsync();
+                throw;
             }
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public async Task CreateServiceOrderAsync(int serviceId, string customer, string phone)
         {
-            return _context.Orders
-                .Include(o => o.DesignServices)
-                .ToList();
+            await _uow.BeginTransactionAsync();
+            try
+            {
+                var service = await _uow.Services.GetByIdAsync(serviceId);
+                if (service == null)
+                {
+                    await _uow.RollbackTransactionAsync();
+                    return;
+                }
+
+                var order = new Order
+                {
+                    CustomerName = customer,
+                    Phone = phone,
+                    OrderDate = DateTime.Now,
+                    IsTurnkey = false,
+                    DesignServices = new List<DesignService> { service }
+                };
+
+                await _uow.Orders.AddAsync(order);
+                await _uow.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _uow.RollbackTransactionAsync();
+                throw;
+            }
         }
 
-        public void DeleteOrder(int id)
+        public async Task DeleteOrderAsync(int id)
         {
-            var order = _context.Orders.Find(id);
+            var order = await _uow.Orders.GetByIdAsync(id);
             if (order != null)
             {
-                _context.Orders.Remove(order);
-                _context.SaveChanges();
+                _uow.Orders.Remove(order);
+                await _uow.CommitAsync();
             }
         }
 
-        public void MarkOrderAsCompleted(int orderId)
-       {
-           var order = _context.Orders
-               .Include(o => o.DesignServices)
-               .FirstOrDefault(o => o.OrderId == orderId);
-  
-           _context.Orders.Update(order);
-  
-           var portfolioItem = order.IsTurnkey
-               ? new PortfolioItem
-               {
-                   Title = order.DesignRequirement ?? "Проєкт",
-                   Description = order.DesignDescription ?? "Опис відсутній"
-               }
-               : new PortfolioItem
-               {
-                   Title = order.DesignServices.First().Name,
-                   Description = order.DesignServices.First().Description,
-                   DesignService = order.DesignServices.First()
-               };
-  
-           _context.PortfolioItems.Add(portfolioItem);
-           _context.SaveChanges();
-       }
+        public async Task MarkOrderCompletedAsync(int orderId)
+        {
+            await _uow.BeginTransactionAsync();
+            try
+            {
+                var order = (await _uow.Orders
+                    .GetWithIncludeAsync(o => o.DesignServices))
+                    .FirstOrDefault(o => o.OrderId == orderId);
+
+                if (order == null)
+                {
+                    await _uow.RollbackTransactionAsync();
+                    return;
+                }
+
+                _uow.Orders.Remove(order);
+
+                PortfolioItem item;
+                if (order.IsTurnkey)
+                {
+                    item = new PortfolioItem
+                    {
+                        Title = order.DesignRequirement ?? "Проєкт",
+                        Description = order.DesignDescription ?? "Опис відсутній"
+                    };
+                }
+                else
+                {
+                    var svc = order.DesignServices.First();
+                    item = new PortfolioItem
+                    {
+                        Title = svc.Name,
+                        Description = svc.Description,
+                        DesignService = svc
+                    };
+                }
+
+                await _uow.Portfolio.AddAsync(item);
+
+                await _uow.CommitTransactionAsync();
+            }
+            catch
+            {
+                await _uow.RollbackTransactionAsync();
+                throw;
+            }
+        }
     }
 }

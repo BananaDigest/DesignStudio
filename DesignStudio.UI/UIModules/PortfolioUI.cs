@@ -1,30 +1,29 @@
 using System;
 using System.Linq;
-using DesignStudio.BLL.Facades;
+using DesignStudio.BLL.Interfaces;
 
 namespace DesignStudio.UI.UIModules
 {
     public static class PortfolioUI
     {
-        public static void ShowPortfolio(DesignStudioService service)
+        public static void ShowPortfolio(IDesignStudioService service)
         {
             UIHelpers.SafeClear();
             Console.WriteLine("=== Портфоліо ===");
-            var items = service.GetPortfolio().ToList();
+            var items = service.GetPortfolioAsync().Result.ToList();
             if (!items.Any())
             {
                 Console.WriteLine("Портфоліо порожнє.");
+                return;
             }
-            else
+
+            foreach (var i in items)
             {
-                foreach (var item in items)
-                {
-                    Console.WriteLine($"Назва: {item.Title}");
-                    Console.WriteLine($"Опис: {item.Description}");
-                    if (item.DesignService != null)
-                        Console.WriteLine($"Послуга: {item.DesignService.Name} — {item.DesignService.Price} грн");
-                    Console.WriteLine(new string('-', 40));
-                }
+                Console.WriteLine($"Назва: {i.Title}");
+                Console.WriteLine($"Опис: {i.Description}");
+                if (i.Service != null)
+                    Console.WriteLine($"Послуга: {i.Service.Name} — {i.Service.Price} грн");
+                Console.WriteLine(new string('-', 40));
             }
         }
     }

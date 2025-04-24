@@ -1,55 +1,63 @@
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using DesignStudio.DAL.Data;
+using System.Threading.Tasks;
+using AutoMapper;
+using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Interfaces;
 using DesignStudio.DAL.Models;
+using DesignStudio.DAL.Repositories;
 
 namespace DesignStudio.BLL.Services
 {
-    public class ServiceManager
+    public class ServiceManager : IServiceManager
     {
-        private readonly DesignStudioContext _context;
-    
-        public ServiceManager(DesignStudioContext context)
+        private readonly IUnitOfWork _uow;
+        private readonly IMapper _mapper;
+
+        public ServiceManager(IUnitOfWork uow, IMapper mapper)
         {
-            _context = context;
+            _uow = uow;
+            _mapper = mapper;
         }
-    
-        public void AddDesignService(DesignService service)
+
+        public async Task<IEnumerable<DesignServiceDto>> GetServicesAsync()
         {
-            _context.DesignServices.Add(service);
-            _context.SaveChanges();
+            var list = await _uow.Services.GetAllAsync();
+            return _mapper.Map<IEnumerable<DesignServiceDto>>(list);
         }
-    
-        public IEnumerable<DesignService> GetAllServices()
+
+        public async Task AddServiceAsync(DesignServiceDto dto)
         {
-            return _context.DesignServices
-                .Include(ds => ds.PortfolioItems)
-                .Include(ds => ds.Orders)
-                .ToList();
+            var entity = _mapper.Map<DesignService>(dto);
+            await _uow.Services.AddAsync(entity);
+            await _uow.CommitAsync();
         }
-    
-        public void UpdateDesignService(DesignService service)
+
+        public async Task UpdateServiceAsync(DesignServiceDto dto)
+{
+    // 1) Завантажуємо ту ж саму сутність з контексту (EF її трекатиме)
+    var entity = await _uow.Services.GetByIdAsync(dto.Id);
+    if (entity == null)
+        return;
+
+    // 2) Оновлюємо йому потрібні поля
+    entity.Name = dto.Name;
+    entity.Description = dto.Description;
+    entity.Price = dto.Price;
+
+    // 3) Комітимо зміни
+    _uow.Services.Update(entity);
+    await _uow.CommitAsync();
+}
+
+
+        public async Task DeleteServiceAsync(int id)
         {
-            _context.DesignServices.Update(service);
-            _context.SaveChanges();
-        }
-    
-        public void DeleteDesignService(int id)
-        {
-            var s = _context.DesignServices.Find(id);
-            if (s != null)
+            var entity = await _uow.Services.GetByIdAsync(id);
+            if (entity != null)
             {
-                _context.DesignServices.Remove(s);
-                _context.SaveChanges();
+                _uow.Services.Remove(entity);
+                await _uow.CommitAsync();
             }
-        }
-    
-        public DesignService? GetServiceById(int id)
-        {
-            return _context.DesignServices
-                .Include(s => s.Orders)
-                .FirstOrDefault(s => s.DesignServiceId == id);
         }
     }
 }

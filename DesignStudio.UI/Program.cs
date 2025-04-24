@@ -1,8 +1,13 @@
 ﻿using System;
+using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 using DesignStudio.DAL.Data;
-using DesignStudio.BLL;
-using DesignStudio.BLL.Facades;
+using DesignStudio.DAL.Repositories;
+using DesignStudio.BLL.Mapping;
+using DesignStudio.BLL.Interfaces;
+using DesignStudio.BLL.Services;
 
 namespace DesignStudio.UI
 {
@@ -10,17 +15,51 @@ namespace DesignStudio.UI
     {
         static void Main()
         {
-            var options = new DbContextOptionsBuilder<DesignStudioContext>()
-                .UseLazyLoadingProxies()  
-                .UseSqlite("Data Source=designstudio.db")
-                .Options;
-            using var context = new DesignStudioContext(options);
-            context.Database.EnsureCreated();
+            // --- Налаштування DI-контейнера ---
+            var services = new ServiceCollection();
 
-            var orderFactory = new OrderFactory();
-            var designService = new DesignStudioService(context, orderFactory);
+            var dbFilePath = "/Users/macboock/DesignStudio/designstudio.db";
+            services.AddDbContext<DesignStudioContext>(options =>
+                options.UseSqlite($"Data Source={dbFilePath}"));
 
-            MenuManager menu = new MenuManager(designService);
+            // Щоб UnitOfWork отримав той самий контекст
+            services.AddScoped<IDbContext>(provider =>
+                provider.GetRequiredService<DesignStudioContext>());
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // BLL layer: AutoMapper та менеджери
+            services.AddAutoMapper(typeof(MappingProfile).Assembly);
+            services.AddScoped<IOrderManager, OrderManager>();
+            services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IPortfolioManager, PortfolioManager>();
+
+            // Фасад над менеджерами
+            services.AddScoped<IDesignStudioService, DesignStudioService>();
+
+            // UI
+            services.AddScoped<MenuManager>();
+
+            // --- Збірка контейнера ---
+            var provider = services.BuildServiceProvider();
+
+            // --- Ініціалізація бази даних ---
+            using (var scope = provider.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<DesignStudioContext>();
+                try
+                {
+                    db.Database.EnsureCreated();
+                    Console.WriteLine($"База даних створена/підключена: {dbFilePath}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Помилка при ініціалізації БД: {ex.Message}");
+                    return;
+                }
+            }
+
+            // --- Запускаємо головне меню ---
+            var menu = provider.GetRequiredService<MenuManager>();
             menu.Run();
         }
     }

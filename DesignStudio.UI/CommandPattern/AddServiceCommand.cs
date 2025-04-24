@@ -1,23 +1,23 @@
-using DesignStudio.BLL.Facades;
-using DesignStudio.DAL.Models;
-
+using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Interfaces;
 
 namespace DesignStudio.UI.CommandPattern
 {
     public class AddServiceCommand : ICommand
     {
-        private readonly DesignStudioService _facade;
-        private readonly DesignService _designService;
+        private readonly IDesignStudioService _facade;
+        private readonly DesignServiceDto _dto;
 
-        public AddServiceCommand(DesignStudioService facade, DesignService designService)
+        public AddServiceCommand(IDesignStudioService facade, DesignServiceDto dto)
         {
             _facade = facade;
-            _designService = designService;
+            _dto = dto;
         }
 
         public void Execute()
         {
-            _facade.AddService(_designService);
+            // Викликаємо асинхронний метод синхронно
+            _facade.AddServiceAsync(_dto).Wait();
         }
     }
 }

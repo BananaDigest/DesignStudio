@@ -1,25 +1,27 @@
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using DesignStudio.DAL.Data;
-using DesignStudio.DAL.Models;
+using System.Threading.Tasks;
+using AutoMapper;
+using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Interfaces;
+using DesignStudio.DAL.Repositories;
 
 namespace DesignStudio.BLL.Services
 {
-    public class PortfolioManager
+    public class PortfolioManager : IPortfolioManager
     {
-        private readonly DesignStudioContext _context;
-    
-        public PortfolioManager(DesignStudioContext context)
+        private readonly IUnitOfWork _uow;
+        private readonly IMapper _mapper;
+
+        public PortfolioManager(IUnitOfWork uow, IMapper mapper)
         {
-            _context = context;
+            _uow = uow;
+            _mapper = mapper;
         }
-    
-        public IEnumerable<PortfolioItem> GetPortfolio()
+
+        public async Task<IEnumerable<PortfolioItemDto>> GetPortfolioAsync()
         {
-            return _context.PortfolioItems
-                .Include(p => p.DesignService)
-                .ToList();
+            var items = await _uow.Portfolio.GetWithIncludeAsync(pi => pi.DesignService);
+            return _mapper.Map<IEnumerable<PortfolioItemDto>>(items);
         }
     }
 }

@@ -1,57 +1,57 @@
 using System.Collections.Generic;
-using DesignStudio.DAL.Data;
-using DesignStudio.DAL.Models;
-using DesignStudio.BLL.Services;
+using System.Threading.Tasks;
+using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Interfaces;
 
-namespace DesignStudio.BLL.Facades
+namespace DesignStudio.BLL.Services
 {
-    public class DesignStudioService
+    public class DesignStudioService : IDesignStudioService
     {
-        private readonly ServiceManager _serviceManager;
-        private readonly OrderManager _orderManager;
-        private readonly PortfolioManager _portfolioManager;
+        private readonly IOrderManager _orders;
+        private readonly IServiceManager _services;
+        private readonly IPortfolioManager _portfolio;
 
-        public DesignStudioService(DesignStudioContext context, IOrderFactory orderFactory)
+        public DesignStudioService(
+            IOrderManager orders,
+            IServiceManager services,
+            IPortfolioManager portfolio)
         {
-            _serviceManager   = new ServiceManager(context);
-            _orderManager     = new OrderManager(context, orderFactory);
-            _portfolioManager = new PortfolioManager(context);
+            _orders = orders;
+            _services = services;
+            _portfolio = portfolio;
         }
 
-        // --- Services ---
-        public void AddService(DesignService service)
-            => _serviceManager.AddDesignService(service);
+        // Services
+        public Task<IEnumerable<DesignServiceDto>> GetServicesAsync() =>
+            _services.GetServicesAsync();
 
-        public IEnumerable<DesignService> GetAllServices()
-            => _serviceManager.GetAllServices();
+        public Task AddServiceAsync(DesignServiceDto dto) =>
+            _services.AddServiceAsync(dto);
 
-        public void UpdateService(DesignService service)
-            => _serviceManager.UpdateDesignService(service);
+        public Task UpdateServiceAsync(DesignServiceDto dto) =>
+            _services.UpdateServiceAsync(dto);
 
-        public void DeleteService(int id)
-            => _serviceManager.DeleteDesignService(id);
-        
-        public DesignService? GetServiceById(int id)
-        => _serviceManager.GetServiceById(id);
+        public Task DeleteServiceAsync(int id) =>
+            _services.DeleteServiceAsync(id);
 
-        // --- Orders ---
-        public void CreateTurnkeyOrder(string customer, string phone, string requirement, string description)
-            => _orderManager.CreateTurnkeyOrder(customer, phone, requirement, description);
+        // Orders
+        public Task<IEnumerable<OrderDto>> GetOrdersAsync() =>
+            _orders.GetOrdersAsync();
 
-        public void CreateServiceOrder(string customer, string phone, int serviceId)
-            => _orderManager.CreateServiceOrder(customer, phone, serviceId);
+        public Task CreateTurnkeyOrderAsync(OrderDto dto) =>
+            _orders.CreateTurnkeyOrderAsync(dto);
 
-        public IEnumerable<Order> GetAllOrders()
-            => _orderManager.GetAllOrders();
+        public Task CreateServiceOrderAsync(int serviceId, string customer, string phone) =>
+            _orders.CreateServiceOrderAsync(serviceId, customer, phone);
 
-        public void DeleteOrder(int id)
-            => _orderManager.DeleteOrder(id);
+        public Task MarkOrderCompletedAsync(int orderId) =>
+            _orders.MarkOrderCompletedAsync(orderId);
 
-        public void MarkOrderAsCompleted(int id)
-            => _orderManager.MarkOrderAsCompleted(id);
+        public Task DeleteOrderAsync(int id) =>
+            _orders.DeleteOrderAsync(id);
 
-        // --- Portfolio ---
-        public IEnumerable<PortfolioItem> GetPortfolio()
-            => _portfolioManager.GetPortfolio();
+        // Portfolio
+        public Task<IEnumerable<PortfolioItemDto>> GetPortfolioAsync() =>
+            _portfolio.GetPortfolioAsync();
     }
 }

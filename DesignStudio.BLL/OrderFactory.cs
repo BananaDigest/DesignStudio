@@ -1,5 +1,6 @@
 using System;
 using DesignStudio.DAL.Models;
+using DesignStudio.BLL.Interfaces;
 
 namespace DesignStudio.BLL
 {

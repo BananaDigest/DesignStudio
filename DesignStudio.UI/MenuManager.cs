@@ -1,12 +1,12 @@
-using DesignStudio.BLL.Facades;
+using DesignStudio.BLL.Interfaces;
 
 namespace DesignStudio.UI
 {
     public class MenuManager
     {
-        private readonly DesignStudioService _service; // Повний шлях
+        private readonly IDesignStudioService _service;
 
-    public MenuManager(DesignStudioService service) // Повний шлях
+    public MenuManager(IDesignStudioService service)
     {
         _service = service;
     }
