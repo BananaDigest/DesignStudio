@@ -40,9 +40,7 @@ namespace DesignStudio.BLL.Services
         return;
 
     // 2) Оновлюємо йому потрібні поля
-    entity.Name = dto.Name;
-    entity.Description = dto.Description;
-    entity.Price = dto.Price;
+    _mapper.Map(dto, entity);
 
     // 3) Комітимо зміни
     _uow.Services.Update(entity);

@@ -39,27 +39,12 @@ namespace DesignStudio.BLL.Services
             }
         }
 
-        public async Task CreateServiceOrderAsync(int serviceId, string customer, string phone)
+        public async Task CreateServiceOrderAsync(OrderDto dto)
         {
             await _uow.BeginTransactionAsync();
             try
             {
-                var service = await _uow.Services.GetByIdAsync(serviceId);
-                if (service == null)
-                {
-                    await _uow.RollbackTransactionAsync();
-                    return;
-                }
-
-                var order = new Order
-                {
-                    CustomerName = customer,
-                    Phone = phone,
-                    OrderDate = DateTime.Now,
-                    IsTurnkey = false,
-                    DesignServices = new List<DesignService> { service }
-                };
-
+                var order = _mapper.Map<Order>(dto);
                 await _uow.Orders.AddAsync(order);
                 await _uow.CommitTransactionAsync();
             }

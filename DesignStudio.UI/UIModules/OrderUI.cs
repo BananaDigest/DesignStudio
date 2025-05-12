@@ -2,12 +2,14 @@ using System;
 using System.Linq;
 using DesignStudio.BLL.DTOs;
 using DesignStudio.BLL.Interfaces;
+using DesignStudio.BLL.Mapping;
+using AutoMapper;
 
 namespace DesignStudio.UI.UIModules
 {
     public static class OrderUI
     {
-        public static void MakeOrder(IDesignStudioService service)
+        public static void MakeOrder(IDesignStudioService service, IMapper mapper)
         {
             UIHelpers.SafeClear();
             Console.WriteLine("=== Зробити замовлення на дизайн ===");
@@ -47,13 +49,30 @@ namespace DesignStudio.UI.UIModules
                     Console.WriteLine($"{s.Id}) {s.Name} — {s.Price} грн");
                     Console.WriteLine($"    Опис: {s.Description}");
                 }
+
                 Console.Write("ID послуги: ");
                 if (int.TryParse(Console.ReadLine(), out int sid))
                 {
-                    service.CreateServiceOrderAsync(sid, customer, phone).Wait();
-                    Console.WriteLine("Замовлення з переліку створено.");
+                    var dto = new OrderDto
+                    {
+                        CustomerName = customer,
+                        Phone = phone,
+                        OrderDate = DateTime.Now,
+                        IsTurnkey = false,
+                        Services = new List<DesignServiceDto>
+                        {
+                            new DesignServiceDto { Id = sid }
+                        }
+                    };
+
+                    service.CreateServiceOrderAsync(dto).Wait();
+                    Console.WriteLine(" Замовлення з переліку створено.");
                 }
-                else Console.WriteLine("Невірний ID.");
+
+                else
+                {
+                    Console.WriteLine("Невірний ID.");
+                }
             }
             else
             {

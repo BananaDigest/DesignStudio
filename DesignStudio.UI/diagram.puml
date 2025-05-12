@@ -1,180 +1,100 @@
 @startuml
-skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 
-' ==== ПРОЄКТ: DesignStudio.DAL ====
-package "DesignStudio.DAL.Models" {
-  class DesignService {
-    - int DesignServiceId
-    - string Name
-    - string Description
-    - decimal Price
-    - ICollection<Order> Orders
-    - ICollection<PortfolioItem> PortfolioItems
-  }
+title Detailed DesignStudio Relationships
 
-  class Order {
-    - int OrderId
-    - string CustomerName
-    - string Phone
-    - DateTime OrderDate
-    - bool IsTurnkey
-    - string DesignRequirement
-    - string DesignDescription
-    - ICollection<DesignService> DesignServices
-  }
-
-  class PortfolioItem {
-    - int PortfolioItemId
-    - string Title
-    - string Description
-    - string? ImageUrl
-    - int? DesignServiceId
-  }
+package "DAL" {
+  class DesignStudioContext
+  interface IDbContext
+  interface IGenericRepository
+  class GenericRepository
+  interface IUnitOfWork
+  class UnitOfWork
+  class DesignService
+  class Order
+  class PortfolioItem
 }
 
-package "DesignStudio.DAL.Data" {
-  class DesignStudioContext <<DbContext>> {
-    + DbSet<DesignService> DesignServices
-    + DbSet<Order> Orders
-    + DbSet<PortfolioItem> PortfolioItems
-    + void SaveChanges()
-    + virtual void OnModelCreating(ModelBuilder)
-  }
+package "BLL" {
+  class DesignServiceDto
+  class OrderDto
+  class PortfolioItemDto
+  interface IOrderManager
+  interface IServiceManager
+  interface IPortfolioManager
+  interface IDesignStudioService
+  class OrderManager
+  class ServiceManager
+  class PortfolioManager
+  class DesignStudioService
+  class MappingProfile
+MappingProfile --> OrderDto : maps
+MappingProfile --> DesignServiceDto : maps
+MappingProfile --> PortfolioItemDto : maps
+MappingProfile --> Order : maps from
+MappingProfile --> DesignService : maps from
+MappingProfile --> PortfolioItem : maps from
 }
 
-' Відносини в DAL
-DesignStudioContext o-- "many" DesignService : contains
-DesignStudioContext o-- "many" Order : contains
-DesignStudioContext o-- "many" PortfolioItem : contains
-DesignService *-- Order
-DesignService o-- PortfolioItem
-
-' ==== ПРОЄКТ: DesignStudio.BLL ====
-package "DesignStudio.BLL.Interfaces" {
-  interface IOrderFactory {
-    + Order CreateTurnkeyOrder(string customer, string phone, string req, string desc)
-    + Order CreateServiceOrder(string customer, string phone, DesignService service)
-  }
+package "UI" {
+  class Program
+  class MenuManager
+  class OrderUI
+  class ServiceUI
+  class PortfolioUI
+  interface ICommand
+  class AddServiceCommand
+  class CommandInvoker
 }
 
-package "DesignStudio.BLL.Factories" {
-  class OrderFactory {
-    + Order CreateTurnkeyOrder(string, string, string, string)
-    + Order CreateServiceOrder(string, string, DesignService)
-  }
-}
-IOrderFactory <|.. OrderFactory
+' DAL Inheritance and Dependencies
+GenericRepository ..|> IGenericRepository
+UnitOfWork      ..|> IUnitOfWork
+GenericRepository --> IDbContext : uses
+UnitOfWork      --> IDbContext : uses
+UnitOfWork      --> IGenericRepository : Services, Orders, Portfolio
+' DesignStudioContext Dependencies
+DesignStudioContext --> DesignService : contains
+DesignStudioContext --> Order : contains
+DesignStudioContext --> PortfolioItem : contains
+DesignStudioContext ..|> IDbContext : implements
+UnitOfWork --> DesignStudioContext : concrete
+GenericRepository --> DesignStudioContext : concrete
 
-package "DesignStudio.BLL.Services" {
-  class ServiceManager {
-    + void AddDesignService(DesignService service)
-    + IEnumerable<DesignService> GetAllServices()
-    + void UpdateDesignService(DesignService service)
-    + void DeleteDesignService(int id)
-    + DesignService GetServiceById(int id)
-  }
-  
-  class OrderManager {
-    + void CreateTurnkeyOrder(string customer, string phone, string req, string desc)
-    + void CreateServiceOrder(string customer, string phone, int serviceId)
-    + IEnumerable<Order> GetAllOrders()
-    + void DeleteOrder(int id)
-    + void MarkOrderAsCompleted(int orderId)
-  }
-  
-  class PortfolioManager {
-    + IEnumerable<PortfolioItem> GetPortfolio()
-  }
-}
 
-package "DesignStudio.BLL.Facades" {
-  class DesignStudioServiceFacade {
-    + void AddService(DesignService service)
-    + IEnumerable<DesignService> GetAllServices()
-    + void UpdateService(DesignService service)
-    + void DeleteService(int id)
-    + DesignService GetServiceById(int id)
-    + void CreateTurnkeyOrder(string customer, string phone, string req, string desc)
-    + void CreateServiceOrder(string customer, string phone, int serviceId)
-    + IEnumerable<Order> GetAllOrders()
-    + void DeleteOrder(int id)
-    + void MarkOrderAsCompleted(int orderId)
-    + IEnumerable<PortfolioItem> GetPortfolio()
-  }
-}
+' Entity Relationships
+DesignService "*" -- "*" Order : DesignServices
+Order "1" -- "0..1" PortfolioItem
 
-DesignStudioServiceFacade *-- ServiceManager
-DesignStudioServiceFacade *-- OrderManager
-DesignStudioServiceFacade *-- PortfolioManager
-OrderManager ..> IOrderFactory : uses
-ServiceManager --> DesignStudioContext : uses
-OrderManager --> DesignStudioContext : uses
-PortfolioManager --> DesignStudioContext : uses
+' BLL Inheritance
+OrderManager    ..|> IOrderManager
+ServiceManager  ..|> IServiceManager
+PortfolioManager..|> IPortfolioManager
+DesignStudioService ..|> IDesignStudioService
+MappingProfile --|> Profile : inherits
 
-' ==== ПРОЄКТ: DesignStudio.UI ====
-package "DesignStudio.UI" {
-  class Program {
-    + static void Main()
-  }
 
-  class MenuManager {
-    + void Run()
-  }
+' BLL Dependencies
+OrderManager    --> IUnitOfWork
+ServiceManager  --> IUnitOfWork
+PortfolioManager--> IUnitOfWork
+DesignStudioService --> OrderManager
+DesignStudioService --> ServiceManager
+DesignStudioService --> PortfolioManager
+OrderManager --> OrderDto : returns
+OrderManager --> DesignServiceDto : via OrderDto
+ServiceManager --> DesignServiceDto : returns
+PortfolioManager --> PortfolioItemDto : returns
+PortfolioItemDto --> DesignServiceDto : contains
 
-  class UIHelpers {
-    + static void SafeClear()
-    + static void SafeReadKey()
-  }
-}
-
-package "DesignStudio.UI.UIModules" {
-  class ServiceUI {
-    + static void AddService(DesignStudioServiceFacade facade)
-    + static void UpdateService(DesignStudioServiceFacade facade)
-  }
-  
-  class OrderUI {
-    + static void MakeOrder(DesignStudioServiceFacade facade)
-    + static void ShowOrders(DesignStudioServiceFacade facade)
-  }
-  
-  class PortfolioUI {
-    + static void ShowPortfolio(DesignStudioServiceFacade facade)
-  }
-}
-
-package "DesignStudio.UI.Commands" {
-  interface ICommand {
-    + void Execute()
-  }
-  
-  class AddServiceCommand {
-    - DesignService _designService
-    - DesignStudioServiceFacade _facade
-    + AddServiceCommand(DesignStudioServiceFacade facade, DesignService designService)
-    + void Execute()
-  }
-
-  class CommandInvoker {
-    + void Invoke(ICommand command)
-  }
-}
-ICommand <|.. AddServiceCommand
-
-' ==== ЗВ'ЯЗКИ UI ====
-Program --> MenuManager
-MenuManager --> UIHelpers : <<uses>>
-MenuManager --> ServiceUI
-MenuManager --> OrderUI
-MenuManager --> PortfolioUI
-
-ServiceUI --> DesignStudioServiceFacade
-OrderUI --> DesignStudioServiceFacade
-PortfolioUI --> DesignStudioServiceFacade
-
-CommandInvoker --> ICommand
-AddServiceCommand --> DesignStudioServiceFacade
-AddServiceCommand --> DesignService
+' UI Dependencies
+Program          --> MenuManager
+MenuManager      --> IDesignStudioService
+OrderUI          --> IDesignStudioService
+ServiceUI        --> IDesignStudioService
+PortfolioUI      --> IDesignStudioService
+AddServiceCommand--> ICommand
+AddServiceCommand--> IDesignStudioService
+CommandInvoker   --> ICommand
 
 @enduml

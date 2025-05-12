@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignStudio.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31e458918e00745aa1405260b957b2edc8f6ac73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84020257da37840a7ce843de6eca0db20f98587d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignStudio.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignStudio.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

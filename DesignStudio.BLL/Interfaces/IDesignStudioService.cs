@@ -13,7 +13,7 @@ namespace DesignStudio.BLL.Interfaces
 
         Task<IEnumerable<OrderDto>> GetOrdersAsync();
         Task CreateTurnkeyOrderAsync(OrderDto dto);
-        Task CreateServiceOrderAsync(int serviceId, string customer, string phone);
+        Task CreateServiceOrderAsync(OrderDto dto);
         Task MarkOrderCompletedAsync(int orderId);
         Task DeleteOrderAsync(int id);
 

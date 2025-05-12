@@ -41,8 +41,8 @@ namespace DesignStudio.BLL.Services
         public Task CreateTurnkeyOrderAsync(OrderDto dto) =>
             _orders.CreateTurnkeyOrderAsync(dto);
 
-        public Task CreateServiceOrderAsync(int serviceId, string customer, string phone) =>
-            _orders.CreateServiceOrderAsync(serviceId, customer, phone);
+        public Task CreateServiceOrderAsync(OrderDto dto) =>
+            _orders.CreateServiceOrderAsync(dto);
 
         public Task MarkOrderCompletedAsync(int orderId) =>
             _orders.MarkOrderCompletedAsync(orderId);

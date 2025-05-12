@@ -18,31 +18,32 @@ namespace DesignStudio.UI
             // --- Налаштування DI-контейнера ---
             var services = new ServiceCollection();
 
-            var dbFilePath = "/Users/macboock/DesignStudio/designstudio.db";
+            // Налаштування шляху до бази даних
+            var dbFilePath = Path.Combine(Environment.CurrentDirectory, "designstudio.db");
             services.AddDbContext<DesignStudioContext>(options =>
                 options.UseSqlite($"Data Source={dbFilePath}"));
 
-            // Щоб UnitOfWork отримав той самий контекст
+            // Зареєструвати контекст як IDbContext для UnitOfWork
             services.AddScoped<IDbContext>(provider =>
                 provider.GetRequiredService<DesignStudioContext>());
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            // BLL layer: AutoMapper та менеджери
+            // BLL: AutoMapper та менеджери
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
             services.AddScoped<IOrderManager, OrderManager>();
             services.AddScoped<IServiceManager, ServiceManager>();
             services.AddScoped<IPortfolioManager, PortfolioManager>();
 
-            // Фасад над менеджерами
+            // Фасад
             services.AddScoped<IDesignStudioService, DesignStudioService>();
 
-            // UI
+            // UI: MenuManager
             services.AddScoped<MenuManager>();
 
-            // --- Збірка контейнера ---
+            // --- Будуємо контейнер ---
             var provider = services.BuildServiceProvider();
 
-            // --- Ініціалізація бази даних ---
+            // --- Ініціалізація бази даних та перевірка ---
             using (var scope = provider.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DesignStudioContext>();
@@ -58,9 +59,9 @@ namespace DesignStudio.UI
                 }
             }
 
-            // --- Запускаємо головне меню ---
-            var menu = provider.GetRequiredService<MenuManager>();
-            menu.Run();
+            // --- Запуск головного меню ---
+            var menuManager = provider.GetRequiredService<MenuManager>();
+            menuManager.Run();
         }
     }
 }

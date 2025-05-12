@@ -1,15 +1,19 @@
 using DesignStudio.BLL.Interfaces;
+using DesignStudio.BLL.Mapping;
+using AutoMapper;
 
 namespace DesignStudio.UI
 {
     public class MenuManager
     {
         private readonly IDesignStudioService _service;
+        private readonly IMapper _mapper;
 
-    public MenuManager(IDesignStudioService service)
-    {
-        _service = service;
-    }
+        public MenuManager(IDesignStudioService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
 
         public void Run()
         {
@@ -24,7 +28,7 @@ namespace DesignStudio.UI
                 Console.WriteLine("5) Переглянути замовлення");
                 Console.WriteLine("6) Вийти");
                 Console.Write("Оберіть опцію: ");
-                string choice = Console.ReadLine();
+                var choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -35,7 +39,7 @@ namespace DesignStudio.UI
                         UIModules.ServiceUI.UpdateService(_service);
                         break;
                     case "3":
-                        UIModules.OrderUI.MakeOrder(_service);
+                        UIModules.OrderUI.MakeOrder(_service, _mapper);
                         break;
                     case "4":
                         UIModules.PortfolioUI.ShowPortfolio(_service);
@@ -49,6 +53,7 @@ namespace DesignStudio.UI
                         Console.WriteLine("Невірна опція.");
                         break;
                 }
+
                 UIHelpers.SafeReadKey();
             }
         }

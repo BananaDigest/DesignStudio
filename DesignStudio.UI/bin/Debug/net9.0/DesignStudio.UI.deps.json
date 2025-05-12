@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "DesignStudio.UI/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "DesignStudio.BLL": "1.0.0",
           "DesignStudio.DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
