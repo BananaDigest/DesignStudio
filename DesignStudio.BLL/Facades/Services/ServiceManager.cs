@@ -33,19 +33,19 @@ namespace DesignStudio.BLL.Services
         }
 
         public async Task UpdateServiceAsync(DesignServiceDto dto)
-{
-    // 1) Завантажуємо ту ж саму сутність з контексту (EF її трекатиме)
-    var entity = await _uow.Services.GetByIdAsync(dto.Id);
-    if (entity == null)
-        return;
+        {
+            // 1) Завантажуємо ту ж саму сутність з контексту (EF її трекатиме)
+            var entity = await _uow.Services.GetByIdAsync(dto.Id);
+            if (entity == null)
+                return;
 
-    // 2) Оновлюємо йому потрібні поля
-    _mapper.Map(dto, entity);
+            // 2) Оновлюємо йому потрібні поля
+            _mapper.Map(dto, entity);
 
-    // 3) Комітимо зміни
-    _uow.Services.Update(entity);
-    await _uow.CommitAsync();
-}
+            // 3) Комітимо зміни
+            _uow.Services.Update(entity);
+            await _uow.CommitAsync();
+        }
 
 
         public async Task DeleteServiceAsync(int id)

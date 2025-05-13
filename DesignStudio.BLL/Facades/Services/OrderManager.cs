@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using DesignStudio.BLL.DTOs;
 using DesignStudio.BLL.Interfaces;
@@ -19,12 +23,15 @@ namespace DesignStudio.BLL.Services
 
         public async Task<IEnumerable<OrderDto>> GetOrdersAsync()
         {
-            var orders = await _uow.Orders.GetWithIncludeAsync(o => o.DesignServices);
+            var orders = await _uow.Orders.GetAllAsync();
+            // Використовуємо AutoMapper для перетворення сутностей у DTO
             return _mapper.Map<IEnumerable<OrderDto>>(orders);
         }
 
         public async Task CreateTurnkeyOrderAsync(OrderDto dto)
         {
+            if (dto == null) throw new ArgumentNullException(nameof(dto));
+
             await _uow.BeginTransactionAsync();
             try
             {
@@ -41,10 +48,26 @@ namespace DesignStudio.BLL.Services
 
         public async Task CreateServiceOrderAsync(OrderDto dto)
         {
+            if (dto == null) throw new ArgumentNullException(nameof(dto));
+
             await _uow.BeginTransactionAsync();
             try
             {
+                // Завантажуємо справжні сутності DesignService
+                var services = new List<DesignService>();
+                foreach (var svcDto in dto.Services)
+                {
+                    var svc = await _uow.Services.GetByIdAsync(svcDto.Id);
+                    if (svc == null)
+                        throw new InvalidOperationException($"Послуга з Id={svcDto.Id} не знайдена.");
+                    services.Add(svc);
+                }
+
                 var order = _mapper.Map<Order>(dto);
+                order.DesignServices.Clear();
+                foreach (var svc in services)
+                    order.DesignServices.Add(svc);
+
                 await _uow.Orders.AddAsync(order);
                 await _uow.CommitTransactionAsync();
             }
@@ -70,10 +93,8 @@ namespace DesignStudio.BLL.Services
             await _uow.BeginTransactionAsync();
             try
             {
-                var order = (await _uow.Orders
-                    .GetWithIncludeAsync(o => o.DesignServices))
-                    .FirstOrDefault(o => o.OrderId == orderId);
-
+                var orders = await _uow.Orders.GetWithIncludeAsync(o => o.DesignServices);
+                var order = orders.FirstOrDefault(o => o.OrderId == orderId);
                 if (order == null)
                 {
                     await _uow.RollbackTransactionAsync();
@@ -82,27 +103,27 @@ namespace DesignStudio.BLL.Services
 
                 _uow.Orders.Remove(order);
 
-                PortfolioItem item;
+                // Додаємо в портфоліо
                 if (order.IsTurnkey)
                 {
-                    item = new PortfolioItem
+                    var item = new PortfolioItem
                     {
                         Title = order.DesignRequirement ?? "Проєкт",
                         Description = order.DesignDescription ?? "Опис відсутній"
                     };
+                    await _uow.Portfolio.AddAsync(item);
                 }
                 else
                 {
                     var svc = order.DesignServices.First();
-                    item = new PortfolioItem
+                    var item = new PortfolioItem
                     {
                         Title = svc.Name,
                         Description = svc.Description,
                         DesignService = svc
                     };
+                    await _uow.Portfolio.AddAsync(item);
                 }
-
-                await _uow.Portfolio.AddAsync(item);
 
                 await _uow.CommitTransactionAsync();
             }

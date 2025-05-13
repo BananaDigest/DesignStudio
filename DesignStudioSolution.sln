@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignStudio.BLL", "DesignS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignStudio.UI", "DesignStudio.UI\DesignStudio.UI.csproj", "{CEA43F33-F462-4469-9868-17558314C8CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignStudio.Tests", "DesignStudio.Tests\DesignStudio.Tests.csproj", "{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{CEA43F33-F462-4469-9868-17558314C8CA}.Release|x64.Build.0 = Release|Any CPU
 		{CEA43F33-F462-4469-9868-17558314C8CA}.Release|x86.ActiveCfg = Release|Any CPU
 		{CEA43F33-F462-4469-9868-17558314C8CA}.Release|x86.Build.0 = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|x64.Build.0 = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|x64.ActiveCfg = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|x64.Build.0 = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4376C1A-5DD1-40B3-93D2-04F4846C1B55}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
