@@ -156,3 +156,4 @@
 /Users/macboock/DesignStudio/DesignStudio.Tests/obj/Debug/net9.0/DesignStudio.Tests.pdb
 /Users/macboock/DesignStudio/DesignStudio.Tests/obj/Debug/net9.0/DesignStudio.Tests.genruntimeconfig.cache
 /Users/macboock/DesignStudio/DesignStudio.Tests/obj/Debug/net9.0/ref/DesignStudio.Tests.dll
+/Users/macboock/DesignStudio/DesignStudio.Tests/bin/Debug/net9.0/Moq.dll

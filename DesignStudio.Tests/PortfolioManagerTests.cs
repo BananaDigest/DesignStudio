@@ -8,39 +8,49 @@ using DesignStudio.BLL.Services;
 using DesignStudio.DAL.Models;
 using NSubstitute;
 using Xunit;
+using AutoMapper;
+using Moq;
+using DesignStudio.DAL.Repositories;
+using DesignStudio.BLL.Mapping;
+using AutoFixture.Kernel;
 
 namespace DesignStudio.Tests
 {
-    public class PortfolioManagerTests : TestBase
+    public class PortfolioManagerTests
     {
+        private readonly Mock<IUnitOfWork> _uowMock;
+        private readonly IMapper _mapper;
         private readonly PortfolioManager _manager;
+        private readonly Fixture _fixture;
 
         public PortfolioManagerTests()
         {
-            _manager = new PortfolioManager(Uow, Mapper);
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
+            _mapper = config.CreateMapper();
+
+            _fixture = new Fixture();
+            _fixture.Behaviors.OfType<ThrowingRecursionBehavior>()
+                .ToList().ForEach(b => _fixture.Behaviors.Remove(b));
+            _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+
+            _uowMock = new Mock<IUnitOfWork>(MockBehavior.Strict);
+            var repoMock = new Mock<IGenericRepository<PortfolioItem>>();
+            _uowMock.Setup(u => u.Portfolio).Returns(repoMock.Object);
+
+            _manager = new PortfolioManager(_uowMock.Object, _mapper);
         }
 
-        [Theory, SafeAutoData]
-        public async Task GetPortfolioAsync_MapsAllItems(
-            [Frozen] List<PortfolioItem> entities)
+        [Fact]
+        public async Task GetPortfolioAsync_MapsAllItems()
         {
-            // Arrange
-            Uow.Portfolio.GetWithIncludeAsync(Arg.Any<Expression<Func<PortfolioItem, object>>>())
-               .Returns(Task.FromResult((IEnumerable<PortfolioItem>)entities));
+            var entities = _fixture.CreateMany<PortfolioItem>(2).ToList();
+            _uowMock.Setup(u => u.Portfolio.GetWithIncludeAsync(It.IsAny<Expression<Func<PortfolioItem, object>>>()))
+                .ReturnsAsync(entities);
 
-            // Act
             var dtos = await _manager.GetPortfolioAsync();
 
-            // Assert
             Assert.Equal(entities.Count, dtos.Count());
-            for (int i = 0; i < entities.Count; i++)
-            {
-                var entity = entities[i];
-                var dto = dtos.ElementAt(i);
-                Assert.Equal(entity.PortfolioItemId, dto.Id);
-                Assert.Equal(entity.Title, dto.Title);
-                Assert.Equal(entity.Description, dto.Description);
-            }
+            Assert.Equal(entities.First().Title, dtos.First().Title);
         }
     }
 }

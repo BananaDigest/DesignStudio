@@ -1,42 +1,52 @@
+using AutoFixture;
 using DesignStudio.BLL;
 using DesignStudio.DAL.Models;
-using AutoFixture.Xunit2;
+using AutoFixture.Kernel;
 
 namespace DesignStudio.Tests
 {
     public class OrderFactoryTests
     {
-        private readonly OrderFactory _factory = new OrderFactory();
+        private readonly OrderFactory _factory;
+        private readonly Fixture _fixture;
 
-        [Theory, SafeAutoData]
-        public void CreateTurnkeyOrder_SetsAllFieldsCorrectly(
-            string customer,
-            string phone,
-            string designRequirement,
-            string designDescription)
+        public OrderFactoryTests()
         {
-            // Act
-            var order = _factory.CreateTurnkeyOrder(customer, phone, designRequirement, designDescription);
+            _factory = new OrderFactory();
+            _fixture = new Fixture();
+            // Remove recursion exception behavior
+            _fixture.Behaviors.OfType<ThrowingRecursionBehavior>()
+                .ToList().ForEach(b => _fixture.Behaviors.Remove(b));
+            _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+        }
 
-            // Assert
+        [Fact]
+        public void CreateTurnkeyOrder_SetsAllFieldsCorrectly()
+        {
+            var customer = _fixture.Create<string>();
+            var phone = _fixture.Create<string>();
+            var req = _fixture.Create<string>();
+            var desc = _fixture.Create<string>();
+
+            var order = _factory.CreateTurnkeyOrder(customer, phone, req, desc);
+
             Assert.Equal(customer, order.CustomerName);
             Assert.Equal(phone, order.Phone);
             Assert.True(order.IsTurnkey);
-            Assert.Equal(designRequirement, order.DesignRequirement);
-            Assert.Equal(designDescription, order.DesignDescription);
+            Assert.Equal(req, order.DesignRequirement);
+            Assert.Equal(desc, order.DesignDescription);
             Assert.NotEqual(default, order.OrderDate);
         }
 
-        [Theory, SafeAutoData]
-        public void CreateServiceOrder_AddsServiceAndSetsFields(
-            string customer,
-            string phone,
-            DesignService service)
+        [Fact]
+        public void CreateServiceOrder_AddsServiceAndSetsFields()
         {
-            // Act
+            var customer = _fixture.Create<string>();
+            var phone = _fixture.Create<string>();
+            var service = _fixture.Create<DesignService>();
+
             var order = _factory.CreateServiceOrder(customer, phone, service);
 
-            // Assert
             Assert.Equal(customer, order.CustomerName);
             Assert.Equal(phone, order.Phone);
             Assert.False(order.IsTurnkey);

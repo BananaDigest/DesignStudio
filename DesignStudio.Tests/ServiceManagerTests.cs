@@ -33,13 +33,10 @@ namespace DesignStudio.Tests
         [Fact]
         public async Task AddServiceAsync_AddsEntityAndCommits()
         {
-            // Arrange
             var dto = _fixture.Create<DesignServiceDto>();
 
-            // Act
             await _serviceManager.AddServiceAsync(dto);
 
-            // Assert
             await Uow.Services.Received(1).AddAsync(Arg.Any<DesignService>());
             await Uow.Received(1).CommitAsync();
         }
@@ -47,15 +44,12 @@ namespace DesignStudio.Tests
         [Fact]
         public async Task GetServicesAsync_ReturnsMappedDtos()
         {
-            // Arrange
             var entities = _fixture.Create<List<DesignService>>();
             Uow.Services.GetAllAsync()
                 .Returns(Task.FromResult((IEnumerable<DesignService>)entities));
 
-            // Act
             var dtos = await _serviceManager.GetServicesAsync();
 
-            // Assert
             Assert.Equal(entities.Count, dtos.Count());
             for (int i = 0; i < entities.Count; i++)
             {
@@ -67,17 +61,14 @@ namespace DesignStudio.Tests
         [Fact]
         public async Task UpdateServiceAsync_ExistingService_MapsAndCommits()
         {
-            // Arrange
             var dto = _fixture.Create<DesignServiceDto>();
             var entity = _fixture.Create<DesignService>();
             entity.DesignServiceId = dto.Id;
             Uow.Services.GetByIdAsync(dto.Id)
                 .Returns(Task.FromResult(entity));
 
-            // Act
             await _serviceManager.UpdateServiceAsync(dto);
 
-            // Assert
             Assert.Equal(dto.Name, entity.Name);
             Assert.Equal(dto.Description, entity.Description);
             Assert.Equal(dto.Price, entity.Price);
@@ -87,16 +78,13 @@ namespace DesignStudio.Tests
         [Fact]
         public async Task DeleteServiceAsync_ExistingService_RemovesAndCommits()
         {
-            // Arrange
             var id = _fixture.Create<int>();
             var entity = new DesignService { DesignServiceId = id };
             Uow.Services.GetByIdAsync(id)
                 .Returns(Task.FromResult(entity));
 
-            // Act
             await _serviceManager.DeleteServiceAsync(id);
 
-            // Assert
             Uow.Services.Received(1).Remove(entity);
             await Uow.Received(1).CommitAsync();
         }

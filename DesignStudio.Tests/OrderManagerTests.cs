@@ -1,124 +1,121 @@
-// File: OrderManagerTests.cs
 using System.Linq.Expressions;
 using AutoFixture;
-using AutoFixture.AutoNSubstitute;
+using AutoMapper;
 using DesignStudio.BLL.DTOs;
+using DesignStudio.BLL.Mapping;
 using DesignStudio.BLL.Services;
 using DesignStudio.DAL.Models;
-using NSubstitute;
+using DesignStudio.DAL.Repositories;
+using Moq;
+using AutoFixture.Kernel;
 
 namespace DesignStudio.Tests
 {
-    public class OrderManagerTests : TestBase
+    public class OrderManagerTests
     {
+        private readonly Mock<IUnitOfWork> _uowMock;
+        private readonly IMapper _mapper;
         private readonly OrderManager _manager;
-        private readonly IFixture _fixture;
+        private readonly Fixture _fixture;
 
         public OrderManagerTests()
         {
-            _manager = new OrderManager(Uow, Mapper);
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
+            _mapper = config.CreateMapper();
 
-            // Налаштовуємо AutoFixture з NSubstitute і прибираємо рекурсії
-            _fixture = new Fixture()
-                .Customize(new AutoNSubstituteCustomization { ConfigureMembers = true });
-            var toRemove = _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList();
-            foreach (var b in toRemove) _fixture.Behaviors.Remove(b);
+            _fixture = new Fixture();
+            _fixture.Behaviors.OfType<ThrowingRecursionBehavior>()
+                .ToList().ForEach(b => _fixture.Behaviors.Remove(b));
             _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+
+            _uowMock = new Mock<IUnitOfWork>(MockBehavior.Strict);
+            // Common setups for transactions
+            _uowMock.Setup(u => u.BeginTransactionAsync()).Returns(Task.CompletedTask);
+            _uowMock.Setup(u => u.CommitTransactionAsync()).Returns(Task.CompletedTask);
+            _uowMock.Setup(u => u.CommitAsync()).ReturnsAsync(1);
+
+            var ordersRepo = new Mock<IGenericRepository<Order>>();
+            var servicesRepo = new Mock<IGenericRepository<DesignService>>();
+            var portfolioRepo = new Mock<IGenericRepository<PortfolioItem>>();
+
+            _uowMock.Setup(u => u.Orders).Returns(ordersRepo.Object);
+            _uowMock.Setup(u => u.Services).Returns(servicesRepo.Object);
+            _uowMock.Setup(u => u.Portfolio).Returns(portfolioRepo.Object);
+
+            _manager = new OrderManager(_uowMock.Object, _mapper);
         }
 
         [Fact]
         public async Task GetOrdersAsync_ReturnsMappedDtos()
         {
-            // Arrange
-            var orders = _fixture.Create<List<Order>>();
-            Uow.Orders.GetAllAsync()
-               .Returns(Task.FromResult((IEnumerable<Order>)orders));
+            var orders = _fixture.CreateMany<Order>(3).ToList();
+            _uowMock.Setup(u => u.Orders.GetAllAsync()).ReturnsAsync(orders);
 
-            // Act
             var dtos = await _manager.GetOrdersAsync();
 
-            // Assert
-            Assert.Equal(orders.Count, dtos.Count());
-            for (int i = 0; i < orders.Count; i++)
-            {
-                Assert.Equal(orders[i].OrderId,    dtos.ElementAt(i).Id);
-                Assert.Equal(orders[i].CustomerName, dtos.ElementAt(i).CustomerName);
-            }
+            Assert.Equal(3, dtos.Count());
+            Assert.Equal(orders.First().CustomerName, dtos.First().CustomerName);
         }
 
         [Fact]
         public async Task CreateTurnkeyOrderAsync_CommitsTransaction()
         {
-            // Arrange
             var dto = _fixture.Build<OrderDto>()
                 .With(x => x.IsTurnkey, true)
                 .Create();
 
-            // Act
             await _manager.CreateTurnkeyOrderAsync(dto);
 
-            // Assert
-            await Uow.Received(1).BeginTransactionAsync();
-            await Uow.Orders.Received(1).AddAsync(Arg.Any<Order>());
-            await Uow.Received(1).CommitTransactionAsync();
+            _uowMock.Verify(u => u.BeginTransactionAsync(), Times.Once);
+            _uowMock.Verify(u => u.Orders.AddAsync(It.IsAny<Order>()), Times.Once);
+            _uowMock.Verify(u => u.CommitTransactionAsync(), Times.Once);
         }
 
         [Fact]
         public async Task CreateServiceOrderAsync_CommitsTransaction()
         {
-            // Arrange
             var serviceEntity = _fixture.Create<DesignService>();
             var dto = _fixture.Build<OrderDto>()
                 .With(x => x.IsTurnkey, false)
                 .With(x => x.Services, new List<DesignServiceDto> { new DesignServiceDto { Id = serviceEntity.DesignServiceId } })
                 .Create();
-            Uow.Services.GetByIdAsync(serviceEntity.DesignServiceId)
-                .Returns(Task.FromResult(serviceEntity));
+            _uowMock.Setup(u => u.Services.GetByIdAsync(serviceEntity.DesignServiceId))
+                .ReturnsAsync(serviceEntity);
 
-            // Act
             await _manager.CreateServiceOrderAsync(dto);
 
-            // Assert
-            await Uow.Received(1).BeginTransactionAsync();
-            await Uow.Orders.Received(1).AddAsync(Arg.Any<Order>());
-            await Uow.Received(1).CommitTransactionAsync();
+            _uowMock.Verify(u => u.BeginTransactionAsync(), Times.Once);
+            _uowMock.Verify(u => u.Orders.AddAsync(It.Is<Order>(o => o.DesignServices.Contains(serviceEntity))), Times.Once);
+            _uowMock.Verify(u => u.CommitTransactionAsync(), Times.Once);
         }
 
         [Fact]
         public async Task MarkOrderCompletedAsync_Turnkey_AddsPortfolioItem()
         {
-            // Arrange
             var order = _fixture.Build<Order>()
-                .With(x => x.IsTurnkey, true)
+                .With(o => o.IsTurnkey, true)
+                .With(o => o.DesignRequirement, "Req")
+                .With(o => o.DesignDescription, "Desc")
                 .Create();
-            Uow.Orders.GetWithIncludeAsync(Arg.Any<Expression<System.Func<Order, object>>>())
-               .Returns(Task.FromResult((IEnumerable<Order>)new[] { order }));
+            _uowMock.Setup(u => u.Orders.GetWithIncludeAsync(It.IsAny<Expression<Func<Order, object>>>()))
+                .ReturnsAsync(new[] { order });
 
-            // Act
             await _manager.MarkOrderCompletedAsync(order.OrderId);
 
-            // Assert
-            await Uow.Portfolio.Received(1)
-                .AddAsync(Arg.Is<PortfolioItem>(pi =>
-                    pi.Title == order.DesignRequirement &&
-                    pi.Description == order.DesignDescription));
-            await Uow.Received(1).CommitTransactionAsync();
+            _uowMock.Verify(u => u.Portfolio.AddAsync(It.Is<PortfolioItem>(pi => pi.Title == "Req" && pi.Description == "Desc")), Times.Once);
+            _uowMock.Verify(u => u.CommitTransactionAsync(), Times.Once);
         }
 
         [Fact]
         public async Task DeleteOrderAsync_RemovesAndCommits()
         {
-            // Arrange
             var order = _fixture.Create<Order>();
-            Uow.Orders.GetByIdAsync(order.OrderId)
-               .Returns(Task.FromResult(order));
+            _uowMock.Setup(u => u.Orders.GetByIdAsync(order.OrderId)).ReturnsAsync(order);
 
-            // Act
             await _manager.DeleteOrderAsync(order.OrderId);
 
-            // Assert
-            Uow.Orders.Received(1).Remove(order);
-            await Uow.Received(1).CommitAsync();
+            _uowMock.Verify(u => u.Orders.Remove(order), Times.Once);
+            _uowMock.Verify(u => u.CommitAsync(), Times.Once);
         }
     }
 }

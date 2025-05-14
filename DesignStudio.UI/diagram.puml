@@ -1,100 +1,126 @@
 @startuml
+skinparam rankdir TB
 skinparam classAttributeIconSize 0
 
-title Detailed DesignStudio Relationships
-
+title DesignStudio with Tests
+together{
+skinparam rankdir TB
 package "DAL" {
-  class DesignStudioContext
-  interface IDbContext
-  interface IGenericRepository
-  class GenericRepository
-  interface IUnitOfWork
-  class UnitOfWork
-  class DesignService
-  class Order
-  class PortfolioItem
+class DesignStudioContext
+interface IDbContext
+interface "IGenericRepository<T>"
+class "GenericRepository<T>"
+interface IUnitOfWork
+class UnitOfWork
+class DesignService
+class Order
+class PortfolioItem
 }
 
 package "BLL" {
-  class DesignServiceDto
-  class OrderDto
-  class PortfolioItemDto
-  interface IOrderManager
-  interface IServiceManager
-  interface IPortfolioManager
-  interface IDesignStudioService
-  class OrderManager
-  class ServiceManager
-  class PortfolioManager
-  class DesignStudioService
-  class MappingProfile
-MappingProfile --> OrderDto : maps
-MappingProfile --> DesignServiceDto : maps
-MappingProfile --> PortfolioItemDto : maps
-MappingProfile --> Order : maps from
-MappingProfile --> DesignService : maps from
-MappingProfile --> PortfolioItem : maps from
+class DesignServiceDto
+class OrderDto
+class PortfolioItemDto
+interface IOrderManager
+interface IServiceManager
+interface IPortfolioManager
+interface IDesignStudioService
+interface IOrderFactory
+class OrderManager
+class ServiceManager
+class PortfolioManager
+class OrderFactory
+class DesignStudioService
+class MappingProfile
+class Profile
 }
 
 package "UI" {
-  class Program
-  class MenuManager
-  class OrderUI
-  class ServiceUI
-  class PortfolioUI
-  interface ICommand
-  class AddServiceCommand
-  class CommandInvoker
+
+class Program
+class MenuManager
+class OrderUI
+class ServiceUI
+class PortfolioUI
+interface ICommand
+class AddServiceCommand
+class CommandInvoker
+class DependencyInjection
+}
+package "Tests" {
+class TestBase
+class SafeAutoDataAttribute
+class OrderManagerTests
+class ServiceManagerTests
+class PortfolioManagerTests
+class OrderFactoryTests
+}
 }
 
-' DAL Inheritance and Dependencies
-GenericRepository ..|> IGenericRepository
-UnitOfWork      ..|> IUnitOfWork
-GenericRepository --> IDbContext : uses
-UnitOfWork      --> IDbContext : uses
-UnitOfWork      --> IGenericRepository : Services, Orders, Portfolio
-' DesignStudioContext Dependencies
-DesignStudioContext --> DesignService : contains
-DesignStudioContext --> Order : contains
-DesignStudioContext --> PortfolioItem : contains
-DesignStudioContext ..|> IDbContext : implements
-UnitOfWork --> DesignStudioContext : concrete
-GenericRepository --> DesignStudioContext : concrete
+' DAL
+"GenericRepository<T>" .|> "IGenericRepository<T>"
+UnitOfWork .|> IUnitOfWork
+DesignStudioContext .|> IDbContext
+"GenericRepository<T>" --> IDbContext
+UnitOfWork --> IDbContext
+UnitOfWork --> "IGenericRepository<T>"
 
-
-' Entity Relationships
+' Entity Associations
 DesignService "*" -- "*" Order : DesignServices
-Order "1" -- "0..1" PortfolioItem
+Order "1" -- "0.1" PortfolioItem : has
+PortfolioItem "0.1" --> DesignService
 
-' BLL Inheritance
-OrderManager    ..|> IOrderManager
-ServiceManager  ..|> IServiceManager
-PortfolioManager..|> IPortfolioManager
-DesignStudioService ..|> IDesignStudioService
-MappingProfile --|> Profile : inherits
-
+' BLL Implementations
+OrderManager .|> IOrderManager
+ServiceManager .|> IServiceManager
+PortfolioManager .|> IPortfolioManager
+DesignStudioService .|> IDesignStudioService
+OrderFactory .|> IOrderFactory
+MappingProfile --|> Profile
 
 ' BLL Dependencies
-OrderManager    --> IUnitOfWork
-ServiceManager  --> IUnitOfWork
-PortfolioManager--> IUnitOfWork
-DesignStudioService --> OrderManager
-DesignStudioService --> ServiceManager
-DesignStudioService --> PortfolioManager
-OrderManager --> OrderDto : returns
-OrderManager --> DesignServiceDto : via OrderDto
-ServiceManager --> DesignServiceDto : returns
-PortfolioManager --> PortfolioItemDto : returns
-PortfolioItemDto --> DesignServiceDto : contains
+OrderManager --> IUnitOfWork
+ServiceManager --> IUnitOfWork
+PortfolioManager --> IUnitOfWork
+OrderManager --> OrderDto
+ServiceManager --> DesignServiceDto
+PortfolioManager --> PortfolioItemDto
+DesignStudioService --> IOrderManager
+DesignStudioService --> IServiceManager
+DesignStudioService --> IPortfolioManager
 
-' UI Dependencies
-Program          --> MenuManager
-MenuManager      --> IDesignStudioService
-OrderUI          --> IDesignStudioService
-ServiceUI        --> IDesignStudioService
-PortfolioUI      --> IDesignStudioService
-AddServiceCommand--> ICommand
-AddServiceCommand--> IDesignStudioService
-CommandInvoker   --> ICommand
+' UI Layers
+Program --> MenuManager
+MenuManager --> IDesignStudioService
+MenuManager --> IMapper
+OrderUI --> IDesignStudioService
+OrderUI --> IMapper
+ServiceUI --> IDesignStudioService
+PortfolioUI --> IDesignStudioService
+AddServiceCommand .> ICommand
+AddServiceCommand --> IDesignStudioService
+CommandInvoker .> ICommand
+DependencyInjection .> DesignStudioContext
+DependencyInjection .> IUnitOfWork
+DependencyInjection .> "IGenericRepository<T>"
+DependencyInjection .> IMapper
+DependencyInjection .> IOrderManager
+DependencyInjection .> IServiceManager
+DependencyInjection .> IPortfolioManager
+DependencyInjection .> IDesignStudioService
+DependencyInjection .> MenuManager
+
+' Test Project Dependencies
+TestBase --> IUnitOfWork
+TestBase --> IMapper
+SafeAutoDataAttribute --> AutoDataAttribute
+OrderManagerTests --> OrderManager
+OrderManagerTests --> TestBase
+ServiceManagerTests --> ServiceManager
+ServiceManagerTests --> TestBase
+PortfolioManagerTests --> PortfolioManager
+PortfolioManagerTests --> TestBase
+OrderFactoryTests --> OrderFactory
+OrderFactoryTests .> SafeAutoDataAttribute
 
 @enduml

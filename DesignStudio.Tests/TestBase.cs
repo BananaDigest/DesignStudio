@@ -16,7 +16,6 @@ namespace DesignStudio.Tests
 
         protected TestBase()
         {
-            // Substitute for UnitOfWork and its internal repositories
             var uowSub = Substitute.For<IUnitOfWork>();
             var ordersRepo = Substitute.For<IGenericRepository<Order>>();
             var servicesRepo = Substitute.For<IGenericRepository<DesignService>>();
@@ -25,13 +24,11 @@ namespace DesignStudio.Tests
             uowSub.Services.Returns(servicesRepo);
             uowSub.Portfolio.Returns(portfolioRepo);
 
-            // Configure DI container with AutoMapper and the IUnitOfWork substitute
             Provider = new ServiceCollection()
                 .AddAutoMapper(typeof(MappingProfile).Assembly)
                 .AddSingleton<IUnitOfWork>(uowSub)
                 .BuildServiceProvider();
 
-            // Resolve mapper and assign unit of work
             Mapper = Provider.GetRequiredService<IMapper>();
             Uow = uowSub;
         }
