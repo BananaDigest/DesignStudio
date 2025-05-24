@@ -7,6 +7,9 @@ using DesignStudio.BLL.Mapping;
 using DesignStudio.BLL.Interfaces;
 using DesignStudio.BLL.Services;
 using DesignStudio.UI;
+using DesignStudio.UI.CommandPattern;
+using DesignStudio.BLL.DTOs;
+using DesignStudio.DAL.Models;
 
 namespace DesignStudio.Composition
 {
@@ -14,43 +17,64 @@ namespace DesignStudio.Composition
     {
         protected override void Load(ContainerBuilder builder)
         {
-            var dbFilePath = Path.Combine(Environment.CurrentDirectory, "designstudio.db");
-            builder
-                .Register(c =>
+            var dbFile = Path.Combine(AppContext.BaseDirectory, "designstudio.db");
+            builder.Register(c =>
+            {
+                var opts = new DbContextOptionsBuilder<DesignStudioContext>()
+                    .UseSqlite($"Data Source={dbFile}")
+                    .Options;
+                var ctx = new DesignStudioContext(opts);
+                ctx.Database.Migrate();
+                return ctx;
+            })
+            .As<DesignStudioContext>()
+            .As<IDbContext>()
+            .InstancePerLifetimeScope();
+
+            builder.RegisterType<UnitOfWork>()
+                   .As<IUnitOfWork>()
+                   .InstancePerLifetimeScope();
+
+            // Конфігурація AutoMapper
+            builder.Register(c =>
+            {
+                var config = new MapperConfiguration(cfg =>
                 {
-                    var options = new DbContextOptionsBuilder<DesignStudioContext>()
-                        .UseSqlite($"Data Source={dbFilePath}")
-                        .Options;
-                    var ctx = new DesignStudioContext(options);
-                    ctx.Database.Migrate();
-                    return ctx;
-                })
-                .As<IDbContext>()
-                .InstancePerLifetimeScope();
+                    cfg.AddProfile<MappingProfile>(); // Використовуйте ваш профіль мапінгу
+                });
+                return config.CreateMapper();
+            })
+            .As<IMapper>()
+            .SingleInstance();
 
-            builder
-                .RegisterType<UnitOfWork>()
-                .As<IUnitOfWork>()
-                .InstancePerLifetimeScope();
+            // Реєстрація менеджерів
+            builder.RegisterType<ServiceManager>()
+                   .As<IServiceManager>()
+                   .InstancePerLifetimeScope();
+            builder.RegisterType<OrderManager>()
+                   .As<IOrderManager>()
+                   .InstancePerLifetimeScope();
+            builder.RegisterType<PortfolioManager>()
+                   .As<IPortfolioManager>()
+                   .InstancePerLifetimeScope();
 
-            builder
-                .Register(c =>
-                {
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<MappingProfile>();
-                    });
-                    return config.CreateMapper();
-                })
-                .As<IMapper>()
-                .SingleInstance();
+            // Основний сервіс
+            builder.RegisterType<DesignStudioService>()
+                   .As<IDesignStudioService>()
+                   .InstancePerLifetimeScope();
 
-            builder.RegisterType<OrderManager>().As<IOrderManager>().InstancePerDependency();
-            builder.RegisterType<ServiceManager>().As<IServiceManager>().InstancePerDependency();
-            builder.RegisterType<PortfolioManager>().As<IPortfolioManager>().InstancePerDependency();
-            builder.RegisterType<DesignStudioService>().As<IDesignStudioService>().InstancePerDependency();
+            // Команди та інтерфейси
+            builder.RegisterType<CommandInvoker>()
+                   .AsSelf() // Реєстрація без інтерфейсу
+                   .InstancePerLifetimeScope();
+            builder.RegisterType<AddServiceCommand>()
+                   .Keyed<ICommand>("AddService")
+                   .InstancePerLifetimeScope();
 
-            builder.RegisterType<MenuManager>().InstancePerDependency();
+            // Меню
+            builder.RegisterType<MenuManager>()
+                   .AsSelf()
+                   .InstancePerLifetimeScope();
         }
     }
 }

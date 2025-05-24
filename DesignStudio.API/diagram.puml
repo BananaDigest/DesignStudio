@@ -1,0 +1,123 @@
+@startuml
+skinparam rankdir TB
+skinparam classAttributeIconSize 0
+
+title DesignStudio with Tests
+together{
+    skinparam rankdir TB
+    package "DAL" {
+        class DesignStudioContext
+        interface IDbContext
+        interface "IGenericRepository<T>"
+        class "GenericRepository<T>"
+        interface IUnitOfWork
+        class UnitOfWork
+        class DesignService
+        class Order
+        class PortfolioItem
+    }
+
+    package "BLL" {
+        class DesignServiceDto
+        class OrderDto
+        class PortfolioItemDto
+        interface IOrderManager
+        interface IServiceManager
+        interface IPortfolioManager
+        interface IDesignStudioService
+        interface IOrderFactory
+        class OrderManager
+        class ServiceManager
+        class PortfolioManager
+        class OrderFactory
+        class DesignStudioService
+        class MappingProfile
+        class Profile
+    }
+
+    package "UI" {
+
+        class Program
+        class MenuManager
+        class OrderUI
+        class ServiceUI
+        class PortfolioUI
+        interface ICommand
+        class AddServiceCommand
+        class CommandInvoker
+        class DependencyInjection
+    }
+    package "Tests" {
+        class TestBase
+        class OrderManagerTests
+        class ServiceManagerTests
+        class PortfolioManagerTests
+        class OrderFactoryTests
+    }
+}
+
+' DAL
+"GenericRepository<T>" .|> "IGenericRepository<T>"
+UnitOfWork .|> IUnitOfWork
+DesignStudioContext .|> IDbContext
+"GenericRepository<T>" --> IDbContext
+UnitOfWork --> IDbContext
+UnitOfWork --> "IGenericRepository<T>"
+
+' Entity Associations
+DesignService "*" -- "*" Order : DesignServices
+Order "1" -- "0.1" PortfolioItem : has
+PortfolioItem "0.1" --> DesignService
+
+' BLL Implementations
+OrderManager .|> IOrderManager
+ServiceManager .|> IServiceManager
+PortfolioManager .|> IPortfolioManager
+DesignStudioService .|> IDesignStudioService
+OrderFactory .|> IOrderFactory
+MappingProfile --|> Profile
+
+' BLL Dependencies
+OrderManager --> IUnitOfWork
+ServiceManager --> IUnitOfWork
+PortfolioManager --> IUnitOfWork
+OrderManager --> OrderDto
+ServiceManager --> DesignServiceDto
+PortfolioManager --> PortfolioItemDto
+DesignStudioService --> IOrderManager
+DesignStudioService --> IServiceManager
+DesignStudioService --> IPortfolioManager
+
+' UI Layers
+Program --> MenuManager
+MenuManager --> IDesignStudioService
+MenuManager --> IMapper
+OrderUI --> IDesignStudioService
+OrderUI --> IMapper
+ServiceUI --> IDesignStudioService
+PortfolioUI --> IDesignStudioService
+AddServiceCommand .> ICommand
+AddServiceCommand --> IDesignStudioService
+CommandInvoker .> ICommand
+DependencyInjection .> DesignStudioContext
+DependencyInjection .> IUnitOfWork
+DependencyInjection .> "IGenericRepository<T>"
+DependencyInjection .> IMapper
+DependencyInjection .> IOrderManager
+DependencyInjection .> IServiceManager
+DependencyInjection .> IPortfolioManager
+DependencyInjection .> IDesignStudioService
+DependencyInjection .> MenuManager
+
+' Test Project Dependencies
+TestBase --> IUnitOfWork
+TestBase --> IMapper
+OrderManagerTests --> OrderManager
+OrderManagerTests --> TestBase
+ServiceManagerTests --> ServiceManager
+ServiceManagerTests --> TestBase
+PortfolioManagerTests --> PortfolioManager
+PortfolioManagerTests --> TestBase
+OrderFactoryTests --> OrderFactory
+
+@enduml

@@ -6,9 +6,10 @@ namespace DesignStudio.DAL.Data
 {
     public class DesignStudioContext : DbContext, IDbContext
     {
-        public DbSet<DesignService> DesignServices { get; set; }
+        public DbSet<DesignService> DesignServices { get; set; } = null!;
         public DbSet<Order> Orders { get; set; }
-        public DbSet<PortfolioItem> PortfolioItems { get; set; }
+        public DbSet<PortfolioItem> PortfolioItems { get; set; } = null!;
+
 
         public DesignStudioContext(DbContextOptions<DesignStudioContext> options)
             : base(options)
