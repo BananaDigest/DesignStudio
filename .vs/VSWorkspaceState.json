@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DesignStudio.API",
+    "\\DesignStudio.API\\Controllers",
+    "\\DesignStudio.API\\DTOs",
+    "\\DesignStudio.BLL",
+    "\\DesignStudio.BLL\\Facades",
+    "\\DesignStudio.BLL\\Facades\\Services",
+    "\\DesignStudio.BLL\\Interfaces",
+    "\\DesignStudio.DAL",
+    "\\PL"
+  ],
+  "PreviewInSolutionExplorer": false
+}

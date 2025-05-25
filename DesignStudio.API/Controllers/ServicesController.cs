@@ -50,9 +50,12 @@ public async Task<IActionResult> GetAll()
         return CreatedAtAction(nameof(GetAll), new { id = dto.Id }, dto);
     }
 
-        [HttpPut]
-        public async Task<IActionResult> Update(DesignServiceDto dto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] DesignServiceDto dto)
         {
+            if (id != dto.Id)
+                return BadRequest("ID in URL and payload do not match.");
+
             var bllDto = _mapper.Map<DesignStudio.BLL.DTOs.DesignServiceDto>(dto);
             await _svc.UpdateServiceAsync(bllDto);
             return NoContent();
