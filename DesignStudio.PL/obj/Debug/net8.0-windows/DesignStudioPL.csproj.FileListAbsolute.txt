@@ -1,0 +1,15 @@
+D:\Coding\DesignStudio\DesignStudio.PL\bin\Debug\net8.0-windows\DesignStudioPL.exe
+D:\Coding\DesignStudio\DesignStudio.PL\bin\Debug\net8.0-windows\DesignStudioPL.deps.json
+D:\Coding\DesignStudio\DesignStudio.PL\bin\Debug\net8.0-windows\DesignStudioPL.runtimeconfig.json
+D:\Coding\DesignStudio\DesignStudio.PL\bin\Debug\net8.0-windows\DesignStudioPL.dll
+D:\Coding\DesignStudio\DesignStudio.PL\bin\Debug\net8.0-windows\DesignStudioPL.pdb
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.AssemblyInfoInputs.cache
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.AssemblyInfo.cs
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.csproj.CoreCompileInputs.cache
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.sourcelink.json
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.dll
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\refint\DesignStudioPL.dll
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.pdb
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.genruntimeconfig.cache
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\ref\DesignStudioPL.dll

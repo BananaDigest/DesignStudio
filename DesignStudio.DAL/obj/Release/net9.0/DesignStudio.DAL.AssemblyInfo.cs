@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96c914f62f9ef6c7ad9199009da6043d7207c219")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d848c2d9b05619a93f3b5dfc07d2ac75f43b7f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignStudio.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
