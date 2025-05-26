@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,30 +99,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PortfolioItemDtoApi.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
-              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
-              "RelativeToolTip": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T18:41:10.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderDtoApi.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
-              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
-              "RelativeToolTip": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T18:40:43.392Z"
             },
             {
               "$type": "Document",
@@ -159,6 +135,41 @@
               "ViewState": "AgIAABEAAAAAAAAAAAAswCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T17:15:36.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\PL\\Program.cs",
+              "RelativeDocumentMoniker": "PL\\Program.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\PL\\Program.cs",
+              "RelativeToolTip": "PL\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T15:33:11.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderDtoApi.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "RelativeToolTip": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:40:43.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PortfolioItemDtoApi.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "RelativeToolTip": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:41:10.148Z"
             },
             {
               "$type": "Document",
@@ -210,19 +221,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\PL\\Program.cs",
-              "RelativeDocumentMoniker": "PL\\Program.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\PL\\Program.cs",
-              "RelativeToolTip": "PL\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T15:33:11.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\OrdersController.cs",
@@ -231,8 +229,7 @@
               "RelativeToolTip": "DesignStudio.API\\Controllers\\OrdersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T16:35:22.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T16:35:22.617Z"
             },
             {
               "$type": "Document",

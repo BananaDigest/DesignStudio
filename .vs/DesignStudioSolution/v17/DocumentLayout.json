@@ -3,8 +3,72 @@
   "WorkspaceRootPath": "D:\\Coding\\DesignStudio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DesignStudio.BLL\\DesignStudioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\di\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\di\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|d:\\coding\\designstudio\\designstudio.pl\\dtos\\portfolioitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\dtos\\portfolioitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|d:\\coding\\designstudio\\designstudio.pl\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\mapping\\apimappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\mapping\\apimappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|d:\\coding\\designstudio\\designstudio.ui\\composition\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|solutionrelative:designstudio.ui\\composition\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\controllers\\portfoliocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\controllers\\portfoliocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|d:\\coding\\designstudio\\designstudio.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|d:\\coding\\designstudio\\designstudio.pl\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|d:\\coding\\designstudio\\designstudio.pl\\dtos\\designservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\dtos\\designservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|d:\\coding\\designstudio\\designstudio.ui\\commandpattern\\addservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|solutionrelative:designstudio.ui\\commandpattern\\addservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.models\\portfolioitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,8 +83,84 @@
       "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.models\\designservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.data\\idbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.data\\idbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|d:\\coding\\designstudio\\designstudio.dal\\designstudio.dal.data\\designstudiocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FB2448-C645-4678-8105-305A9200EBE0}|DesignStudio.DAL\\DesignStudio.DAL.csproj|solutionrelative:designstudio.dal\\designstudio.dal.data\\designstudiocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\interfaces\\iservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\interfaces\\iservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\interfaces\\iportfoliomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\interfaces\\iportfoliomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\interfaces\\iordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\interfaces\\iordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\interfaces\\iorderfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\interfaces\\iorderfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\interfaces\\idesignstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\interfaces\\idesignstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\facades\\designstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\facades\\designstudioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\facades\\services\\servicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\facades\\services\\servicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\facades\\services\\portfoliomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\facades\\services\\portfoliomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\facades\\services\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\facades\\services\\ordermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\dtos\\portfolioitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\dtos\\portfolioitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|d:\\coding\\designstudio\\designstudio.bll\\dtos\\designservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{338A9A5C-A162-4196-A83F-CCDBF78CE19E}|DesignStudio.BLL\\DesignStudio.BLL.csproj|solutionrelative:designstudio.bll\\dtos\\designservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\dtos\\portfolioitemdtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\dtos\\portfolioitemdtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\dtos\\orderdtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\dtos\\orderdtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|d:\\coding\\designstudio\\designstudio.api\\dtos\\designservicedtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3709F845-F35D-4071-98F2-1CF33256D49A}|DesignStudio.API\\DesignStudio.API.csproj|solutionrelative:designstudio.api\\dtos\\designservicedtoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|D:\\Coding\\DesignStudio\\designstudio.pl\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{740AB8F4-8497-9F3F-3FBE-8A34B75462A7}|DesignStudio.PL\\DesignStudioPL.csproj|solutionrelative:designstudio.pl\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DesignStudio.BLL\\DesignStudioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEA43F33-F462-4469-9868-17558314C8CA}|DesignStudio.UI\\DesignStudio.UI.csproj|d:\\coding\\designstudio\\designstudio.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,55 +214,524 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PortfolioItem.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
-              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
-              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DI\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DI\\DependencyInjection.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DI\\DependencyInjection.cs",
+              "RelativeToolTip": "DesignStudio.API\\DI\\DependencyInjection.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:38:10.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderStatus.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
-              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
-              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:38:08.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
-              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
-              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:38:04.83Z"
+              "WhenOpened": "2025-05-26T20:01:00.83Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\OrderDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\DTOs\\OrderDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\OrderDto.cs",
+              "RelativeToolTip": "DesignStudio.PL\\DTOs\\OrderDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:47:15.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PortfolioItemDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\PortfolioItemDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\DTOs\\PortfolioItemDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\PortfolioItemDto.cs",
+              "RelativeToolTip": "DesignStudio.PL\\DTOs\\PortfolioItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:47:51.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Composition\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DesignStudio.UI\\Composition\\DependencyInjection.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Composition\\DependencyInjection.cs",
+              "RelativeToolTip": "DesignStudio.UI\\Composition\\DependencyInjection.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwD8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:52:32.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\Controllers\\ServicesController.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "DesignStudio.API\\Controllers\\ServicesController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAqwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:53:53.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiMAppingProfile.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Mapping\\ApiMAppingProfile.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\Mapping\\ApiMAppingProfile.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Mapping\\ApiMAppingProfile.cs",
+              "RelativeToolTip": "DesignStudio.API\\Mapping\\ApiMAppingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:15.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PortfolioController.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\PortfolioController.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\Controllers\\PortfolioController.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\PortfolioController.cs",
+              "RelativeToolTip": "DesignStudio.API\\Controllers\\PortfolioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:53:48.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\Program.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\Program.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\Program.cs",
+              "RelativeToolTip": "DesignStudio.PL\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:37:02.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DesignServiceDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\DesignServiceDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\DTOs\\DesignServiceDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\DTOs\\DesignServiceDto.cs",
+              "RelativeToolTip": "DesignStudio.PL\\DTOs\\DesignServiceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:47:09.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\MainForm.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\MainForm.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\MainForm.cs",
+              "RelativeToolTip": "DesignStudio.PL\\MainForm.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAAuwDoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:36:41.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Program.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\Program.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Program.cs",
+              "RelativeToolTip": "DesignStudio.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:26.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "DesignStudio.API\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:53:38.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddServiceCommand.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\CommandPattern\\AddServiceCommand.cs",
+              "RelativeDocumentMoniker": "DesignStudio.UI\\CommandPattern\\AddServiceCommand.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\CommandPattern\\AddServiceCommand.cs",
+              "RelativeToolTip": "DesignStudio.UI\\CommandPattern\\AddServiceCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:47:06.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA2wCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:46:46.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\Repositories\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\IUnitOfWork.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\Repositories\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:46:40.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\Repositories\\IGenericRepository.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\IGenericRepository.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\Repositories\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:46:35.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:46:29.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IDbContext.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\IDbContext.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Data\\IDbContext.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\IDbContext.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Data\\IDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:46:04.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:49.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "DesignService.cs",
               "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
               "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
               "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
               "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\DesignService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:38:03.1Z"
+              "WhenOpened": "2025-04-08T20:38:03.1Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 18,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:04.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PortfolioItem.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\PortfolioItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:10.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IServiceManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IServiceManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Interfaces\\IServiceManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IServiceManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Interfaces\\IServiceManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:42.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IPortfolioManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IPortfolioManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Interfaces\\IPortfolioManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IPortfolioManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Interfaces\\IPortfolioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:36.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DesignStudioContext.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwCQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:37:56.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IOrderManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IOrderManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Interfaces\\IOrderManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IOrderManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Interfaces\\IOrderManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:29.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IOrderFactory.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IOrderFactory.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Interfaces\\IOrderFactory.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IOrderFactory.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Interfaces\\IOrderFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:24.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IDesignStudioService.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IDesignStudioService.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Interfaces\\IDesignStudioService.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Interfaces\\IDesignStudioService.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Interfaces\\IDesignStudioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:19.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DesignStudioService.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\DesignStudioService.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Facades\\DesignStudioService.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\DesignStudioService.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Facades\\DesignStudioService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAywC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:12.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ServiceManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\ServiceManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Facades\\Services\\ServiceManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\ServiceManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Facades\\Services\\ServiceManager.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:06.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PortfolioManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\PortfolioManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Facades\\Services\\PortfolioManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\PortfolioManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Facades\\Services\\PortfolioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:45:01.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "OrderManager.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\OrderManager.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\Facades\\Services\\OrderManager.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\Facades\\Services\\OrderManager.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\Facades\\Services\\OrderManager.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAAwHgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:55.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PortfolioItemDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\PortfolioItemDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\DTOs\\PortfolioItemDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\PortfolioItemDto.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\DTOs\\PortfolioItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:47.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\OrderDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\DTOs\\OrderDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\OrderDto.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\DTOs\\OrderDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:42.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DesignServiceDto.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\DesignServiceDto.cs",
+              "RelativeDocumentMoniker": "DesignStudio.BLL\\DTOs\\DesignServiceDto.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DTOs\\DesignServiceDto.cs",
+              "RelativeToolTip": "DesignStudio.BLL\\DTOs\\DesignServiceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:36.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PortfolioItemDtoApi.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "RelativeToolTip": "DesignStudio.API\\DTOs\\PortfolioItemDtoApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:05.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "OrderDtoApi.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "RelativeToolTip": "DesignStudio.API\\DTOs\\OrderDtoApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:43:56.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DesignServiceDtoApi.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\DesignServiceDtoApi.cs",
+              "RelativeDocumentMoniker": "DesignStudio.API\\DTOs\\DesignServiceDtoApi.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.API\\DTOs\\DesignServiceDtoApi.cs",
+              "RelativeToolTip": "DesignStudio.API\\DTOs\\DesignServiceDtoApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:43:45.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\MainForm.cs",
+              "RelativeDocumentMoniker": "DesignStudio.PL\\MainForm.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.PL\\MainForm.cs [Design]",
+              "RelativeToolTip": "DesignStudio.PL\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:37:06.829Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Models\\OrderStatus.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:38:08.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "DesignStudioService.cs",
               "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.BLL\\DesignStudioService.cs",
               "RelativeDocumentMoniker": "DesignStudio.BLL\\DesignStudioService.cs",
@@ -133,27 +742,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DesignStudioContext.cs",
-              "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
-              "RelativeDocumentMoniker": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
-              "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
-              "RelativeToolTip": "DesignStudio.DAL\\DesignStudio.DAL.Data\\DesignStudioContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:37:56.457Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 40,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Program.cs",
               "RelativeDocumentMoniker": "DesignStudio.UI\\Program.cs",
               "ToolTip": "D:\\Coding\\DesignStudio\\DesignStudio.UI\\Program.cs",
               "RelativeToolTip": "DesignStudio.UI\\Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:37:23.697Z"
+              "WhenOpened": "2025-04-08T20:37:23.697Z",
+              "EditorCaption": ""
             }
           ]
         },

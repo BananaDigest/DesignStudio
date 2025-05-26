@@ -8,9 +8,8 @@
     "\\DesignStudio.BLL\\Facades",
     "\\DesignStudio.BLL\\Facades\\Services",
     "\\DesignStudio.BLL\\Interfaces",
-    "\\DesignStudio.DAL",
-    "\\PL"
+    "\\DesignStudio.DAL"
   ],
-  "SelectedNode": "\\PL\\Program.cs",
+  "SelectedNode": "\\DesignStudio.API\\Controllers\\PortfolioController.cs",
   "PreviewInSolutionExplorer": false
 }

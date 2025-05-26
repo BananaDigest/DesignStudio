@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignStudioPL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d848c2d9b05619a93f3b5dfc07d2ac75f43b7f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cba50599d920fbfa834427ee4a68d3f25f13339a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignStudioPL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignStudioPL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

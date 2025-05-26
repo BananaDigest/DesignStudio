@@ -13,3 +13,5 @@ D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\refint\DesignStu
 D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.pdb
 D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.genruntimeconfig.cache
 D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\ref\DesignStudioPL.dll
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudio.PL.MainForm.resources
+D:\Coding\DesignStudio\DesignStudio.PL\obj\Debug\net8.0-windows\DesignStudioPL.csproj.GenerateResource.cache
