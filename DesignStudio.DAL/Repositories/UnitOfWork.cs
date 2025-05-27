@@ -17,8 +17,8 @@ namespace DesignStudio.DAL.Repositories
         public UnitOfWork(IDbContext context)
         {
             _context = context;
-            Services  = new GenericRepository<DesignService>(context);
-            Orders    = new GenericRepository<Order>(context);
+            Services = new GenericRepository<DesignService>(context);
+            Orders = new GenericRepository<Order>(context);
             Portfolio = new GenericRepository<PortfolioItem>(context);
         }
 

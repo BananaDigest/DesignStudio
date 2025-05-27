@@ -24,7 +24,7 @@ namespace DesignStudio.DAL.Data
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.DesignServices)
                 .WithMany(ds => ds.Orders)
-                .UsingEntity<Dictionary<string, object>>(                 
+                .UsingEntity<Dictionary<string, object>>(
                     "OrderDesignService",
                     j => j
                         .HasOne<DesignService>()

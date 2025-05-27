@@ -13,22 +13,22 @@ namespace DesignStudio.API.Controllers
     public class DesignServicesController : ControllerBase
     {
         private readonly IDesignStudioService _svc;
-    private readonly IMapper _mapper;
-    private readonly ILogger<DesignServicesController> _logger;
+        private readonly IMapper _mapper;
+        private readonly ILogger<DesignServicesController> _logger;
 
-    public DesignServicesController(IDesignStudioService svc, IMapper mapper, ILogger<DesignServicesController> logger)
-    {
-        _svc = svc;
-        _mapper = mapper;
-        _logger = logger;
-    }
-     [HttpGet]
-public async Task<IActionResult> GetAll()
-{
-    var bll = await _svc.GetServicesAsync();
-    var apiDtos = _mapper.Map<IEnumerable<DesignServiceDto>>(bll);
-    return Ok(apiDtos);
-}
+        public DesignServicesController(IDesignStudioService svc, IMapper mapper, ILogger<DesignServicesController> logger)
+        {
+            _svc = svc;
+            _mapper = mapper;
+            _logger = logger;
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var bll = await _svc.GetServicesAsync();
+            var apiDtos = _mapper.Map<IEnumerable<DesignServiceDto>>(bll);
+            return Ok(apiDtos);
+        }
 
 
         [HttpGet("{id}")]
@@ -41,14 +41,14 @@ public async Task<IActionResult> GetAll()
         }
 
         [HttpPost]
-    public async Task<IActionResult> Create(DesignServiceDto dto)
-    {
-        _logger.LogInformation(">>> Hit POST api/designservices");
-        var bllDto = _mapper.Map<DesignStudio.BLL.DTOs.DesignServiceDto>(dto);
-        await _svc.AddServiceAsync(bllDto);
-        _logger.LogInformation(">>> Created service with ID {Id}", dto.Id);
-        return CreatedAtAction(nameof(GetAll), new { id = dto.Id }, dto);
-    }
+        public async Task<IActionResult> Create(DesignServiceDto dto)
+        {
+            _logger.LogInformation(">>> Hit POST api/designservices");
+            var bllDto = _mapper.Map<DesignStudio.BLL.DTOs.DesignServiceDto>(dto);
+            await _svc.AddServiceAsync(bllDto);
+            _logger.LogInformation(">>> Created service with ID {Id}", dto.Id);
+            return CreatedAtAction(nameof(GetAll), new { id = dto.Id }, dto);
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] DesignServiceDto dto)
